@@ -1,6 +1,6 @@
 # SofttekPeople
 Proyecto People
-" Implementación de Script 1 BBDD  Backend " 30/12/2020.
+30/12/2020 " Implementación de Script 1 BBDD  Backend ".
 
-" Actualización BBDD Backend" 04/01/2021.
+04/01/2021" Actualización BBDD Backend".
 
