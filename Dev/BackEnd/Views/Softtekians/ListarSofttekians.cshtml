@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WellnessPeople.Models.Softtekian>
+
+@{
+    ViewData["Title"] = "Administración de Softtekians";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+<br />
+<h2>Administración de Softtekians</h2>
+<hr />
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='/PanelAdmin/Index'" style="cursor: pointer;" />
+</p>
+
+<p class="float-left">
+    <a asp-action="CrearSofttekian" class="btn btn-primary">Agregar Softtekian</a>
+</p>
+
+<table class="table2" width="100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.primer_nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.primer_apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_nacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.esPeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.habilitado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.primer_nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.primer_apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.esPeople)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.habilitado)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "CrearSofttekian", new { id = item.Id, primer_nombre = item.primer_nombre, segundo_nombre = item.segundo_nombre, primer_apellido = item.primer_apellido, segundo_apellido = item.segundo_apellido, estado_civil = item.estado_civil, fecha_nacimiento = item.fecha_nacimiento, email = item.email, esPeople = item.esPeople, direccion_fisica = item.direccion_fisica, habilitado = item.habilitado, id_pais = item.id_pais, id_rol = item.id_rol }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "EliminarSofttekian", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar al Softtekian?')" })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

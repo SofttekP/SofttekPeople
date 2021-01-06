@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WellnessPeople.Models.TipoCurso>
+
+@{
+    ViewData["Title"] = "Administración de Tipo de Cursos";
+    Layout = "_Layout_Backend";
+}
+
+<h2>ViewData["Title"]</h2>
+<br /><hr />
+
+<p class="float-right">
+    <a asp-action="CrearTipoCurso" class="btn btn-primary">Agregar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_TipoCurso)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_TipoCurso)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "CrearTipoCurso", new { id = item.Id, nombre_TipoCurso = item.nombre_TipoCurso }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "EliminarTipoCurso", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar el Tipo de Curso?')" })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

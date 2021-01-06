@@ -1,0 +1,92 @@
+﻿@model WellnessPeople.Models.Contenido
+
+@{
+    ViewData["Title"] = "Crear Contenido";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+<br />
+<h2>@ViewData["Title"]</h2>
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='/PanelAdmin/Index'" style="cursor: pointer;" />
+</p>
+<br />
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AgregarContenido" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" />
+                <!--<input type="hidden" asp-for="habilitada" /> -->
+                <b><label asp-for="nombre" class="control-label"></label></b>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="nombre_categoria" class="control-label"></label></b>
+                <input asp-for="nombre_categoria" class="form-control" />
+                <span asp-validation-for="nombre_categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="nombre_subcategoria" class="control-label"></label></b>
+                <input asp-for="nombre_subcategoria" class="form-control" />
+                <span asp-validation-for="nombre_subcategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="Url" class="control-label"></label></b>
+                    <input asp-for="Url" class="form-control" placeholder="http://" />
+                    <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div id="Editor">
+                <b>
+                    <label asp-for="wysiwyg" class="control-label"></label></b>
+                        <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+                        <script type="text/javascript">
+                            //<![CDATA[
+                            bkLib.onDomLoaded(function () {
+                                new nicEditor().panelInstance('area2');
+                                new nicEditor({ fullPanel: true }).panelInstance('area2');
+                                new nicEditor({ iconsPath: '../nicEditorIcons.gif' }).panelInstance('area2');
+                                new nicEditor({ buttonList: ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'html', 'image', 'save'] }).panelInstance('area2');
+                                new nicEditor({ maxHeight: 200 }).panelInstance('area2');
+                            });
+                            //]]>
+
+                            bkLib.onDomLoaded(function () {
+                                new nicEditor({
+                                    fullPanel: true, onSave: function (content, id, instance) {
+                                        alert('save button clicked for element ' + id + ' = ' + content);
+                                    }
+                                }).panelInstance('area2');
+                            });
+
+                        </script>
+            
+                        <textarea cols="70" id="area2"></textarea>
+                        <br /><br />
+                        @*<div class="form-group">
+                <label asp-for="wysiwyg" class="control-label"></label>
+                <input asp-for="wysiwyg" class="form-control" />
+                <span asp-validation-for="wysiwyg" class="text-danger"></span>
+            </div>*@
+                        @*<div class="form-group">
+                <label asp-for="nombre_pais" class="control-label"></label>
+                <select asp-for="Id_pais" class="form-control" asp-items="@(new SelectList(ViewBag.DepList,"Id","nombre_pais"))">
+                </select>
+                <br />
+            </div>*@
+</div>
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a asp-action="ListarContenidos" class="btn btn-outline-success">Listado de categorías</a>
+                </div>
+        </form>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

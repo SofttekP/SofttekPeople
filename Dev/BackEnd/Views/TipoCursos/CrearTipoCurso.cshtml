@@ -1,0 +1,33 @@
+﻿@model WellnessPeople.Models.TipoCurso
+
+@{
+    ViewData["Title"] = "Crear Tipo de Cursos";
+    Layout = "_Layout_Backend";
+}
+
+<h1>Crear Tipo de Cursos</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AgregarTipoCurso" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="habilitado" />
+                <label asp-for="nombre_TipoCurso" class="control-label"></label>
+                <input asp-for="nombre_TipoCurso" class="form-control" />
+                <span asp-validation-for="nombre_TipoCurso" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-action="ListarTipoCursos" class="btn btn-outline-success">Listado de Tipo de Cursos</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

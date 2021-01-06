@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WellnessPeople.Models.Curso>
+
+@{
+    ViewData["Title"] = "Administración de Cursos";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+<h2>Administración de Cursos</h2>
+<hr />
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='~/PanelAdmin/Index'" style="cursor: pointer;" />
+</p>
+
+<p class="float-left">
+    <a asp-action="CrearCurso" class="btn btn-primary">Agregar Curso</a>
+</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fecha_inicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fecha_fin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombre_TipoCurso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fecha_creacion)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.creado_por)
+                </th>*@
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_fin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_TipoCurso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_creacion)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.creado_por)
+                </td>*@
+                <td>
+                    @Html.ActionLink("Editar", "CrearCurso", new { id = item.Id, nombre = item.nombre, descripcion = item.descripcion, fecha_inicio = item.fecha_inicio, fecha_fin = item.fecha_fin, fecha_creacion = item.fecha_creacion }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Eliminar", "EliminarCurso", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar el Tipo de Curso?')" })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

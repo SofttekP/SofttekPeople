@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WellnessPeople.Models.Contenido>
+
+@{
+    ViewData["Title"] = "Administración de Contenido";
+    Layout = "_Layout_Backend";
+}
+
+<br />
+<h2>Administración de Contenido</h2>
+<hr />
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='~/PanelAdmin/Index'" style="cursor: pointer;" />
+</p>
+
+<p class="float-left">
+    <a asp-action="CrearContenido" class="btn btn-primary">Agregar Contenido</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_subcategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wysiwyg)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_categoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_subcategoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.wysiwyg)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Editar", "CrearContenido", new { id = item.Id, nombre = item.nombre, nombre_categoria = item.nombre_categoria, nombre_subcategoria = item.nombre_subcategoria }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Eliminar", "EliminarContenido", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar el Tipo de Contenido?')" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script>tinymce.init({ selector: 'textarea' });</script>
+}

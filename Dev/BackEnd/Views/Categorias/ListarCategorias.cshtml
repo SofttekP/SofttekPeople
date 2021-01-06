@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WellnessPeople.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Administración de Categorias";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+<br />
+<h2>Administración de Categorías</h2>
+<hr />
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='/PanelAdmin/Index?id_pais=@ViewBag.id_pais&Usuario=@ViewBag.usuario'" style="cursor: pointer;" />
+</p>
+
+<p class="float-left">
+    <a class="btn btn-primary" href="/Categorias/CrearCategoria?id_pais=@ViewBag.id_pais&Usuario=@ViewBag.usuario" >Agregar Categoría</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.nombre_pais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.habilitada)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+                <span style="color: @Html.DisplayFor(modelItem => item.Color)"> REF. COLOR </span>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_pais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.habilitada)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "CrearCategoria", new { id = item.Id, nombre = item.nombre, Color = item.Color, Id_pais = item.Id_pais, nombre_pais = item.nombre_pais }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "EliminarCategoria", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar la categoría?')" })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

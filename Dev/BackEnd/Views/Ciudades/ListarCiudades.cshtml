@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WellnessPeople.Models.Ciudades>
+
+@{
+    ViewData["Title"] = "Administración de Ciudades";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+<br />
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='PanelAdmin/Index'" style="cursor: pointer;" />
+</p>
+
+<p class="float-left">
+    <a asp-action="CrearCiudad" class="btn btn-primary">Agregar</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_pais)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_ciudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_pais)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "CrearCiudad", new { id = item.Id, nombre_ciudad = item.nombre_ciudad }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "EliminarCiudad", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar la Ciudad?')" })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

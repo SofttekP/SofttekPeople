@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WellnessPeople.Models.TipoEvento>
+
+@{
+    ViewData["Title"] = "Listado Tipo de Eventos";
+    Layout = "_Layout_Backend";
+}
+
+<h1>Listado Tipo de Eventos</h1>
+
+<p class="float-right">
+    <a asp-action="CrearTipoEvento" class="btn btn-primary">Agregar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_TipoEvento)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_TipoEvento)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Editar", "CrearTipoEvento", new { id = item.Id, nombre_TipoEvento = item.nombre_TipoEvento }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Eliminar", "EliminarTipoEvento", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar el Tipo de Evento?')" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
