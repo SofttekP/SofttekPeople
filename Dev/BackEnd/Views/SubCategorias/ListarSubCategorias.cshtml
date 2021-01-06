@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WellnessPeople.Models.SubCategoria>
+
+@{
+    ViewData["Title"] = "Administración de SubCategorias";
+    Layout = "_Layout_Backend";
+}
+
+<br />
+<h2>Administración de SubCategorias</h2>
+<hr />
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='~/PanelAdmin/Index'" style="cursor: pointer;" />
+</p>
+
+<p class="float-left">
+    <a asp-action="CrearSubCategoria" class="btn btn-primary">Agregar SubCategoria</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_subcategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.habilitada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_subcategoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_categoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.habilitada)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "CrearSubCategoria", new { id = item.Id, nombre_subcategoria = item.nombre_subcategoria, id_categoria = item.Id_categoria, habilitada = item.habilitada }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Eliminar", "EliminarSubCategoria", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('¿Está seguro/a de eliminar la Subcategoría?')" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

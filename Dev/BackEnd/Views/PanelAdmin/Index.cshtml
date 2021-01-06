@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WellnessPeople.Models.Softtekian>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+*@
+@{
+    ViewData["Title"] = "Panel de Administración";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+
+<div id="ContenedorLogin">
+
+    <img src="/images/fondoSofttek.png" style="width:95%" />
+    <p style="text-align: justify;">
+
+        <h3>Bienvenido/a a Wellness People</h3>
+        <br />
+    </p>
+
+    <form id="frmPanelAdmin" name="frmPanelAdmin" method="post">
+
+        @if (Model != null)
+        {
+            var cuenta = Model.Count();
+
+            @if (cuenta == 1)
+            {
+
+                @foreach (var item in Model)
+                {
+
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="50%">
+                            <img src="~/images/imgMujerAlegre.png" />
+                        </td>
+                        <td width="50%">
+                            <input type="hidden" id="primerNombre" name="primerNombre" value="@Html.DisplayFor(modelItem => item.primer_nombre)" style="border:0" />
+                            &nbsp;
+                            <input type="hidden" id="segundoNombre" name="segundoNombre" value="@Html.DisplayFor(modelItem => item.segundo_nombre)" style="border:0" />
+                            &nbsp;
+                            <input type="hidden" id="primerApellido" name="primerApellido" value="@Html.DisplayFor(modelItem => item.primer_apellido)" style="border:0" />
+                            &nbsp;
+                            <input type="hidden" id="segundoApellido" name="segundoApellido" value="@Html.DisplayFor(modelItem => item.segundo_apellido)" style="border:0" />
+                        </td>
+                    </tr> 
+                  </table>
+                
+
+                // Método POST
+                    <input type="hidden" id="primerNombre" name="primerNombre" value="@Html.DisplayFor(modelItem => item.primer_nombre)" />
+                    <input type="hidden" id="segundoNombre" name="segundoNombre" value="@Html.DisplayFor(modelItem => item.segundo_nombre)" />
+                    <input type="hidden" id="primerApellido" name="primerApellido" value="@Html.DisplayFor(modelItem => item.primer_apellido)" />
+                    <input type="hidden" id="segundoApellido" name="segundoApellido" value="@Html.DisplayFor(modelItem => item.segundo_apellido)" />
+                    <input type="hidden" id="idPaisSof" name="idPaisSof" value="@Html.DisplayFor(modelItem => item.id_pais)" />
+                    <input type="hidden" id="nombrePaisSof" name="nombrePaisSof" value="@Html.DisplayFor(modelItem => item.nombre_pais)" />
+                    <input type="hidden" id="idRolSof" name="idRolSof" value="@Html.DisplayFor(modelItem => item.id_rol)" />
+                    <input type="hidden" id="nombreRolSof" name="nombreRolSof" value="@Html.DisplayFor(modelItem => item.nombre_rol)" />
+                    <input type="hidden" id="usuario" name="usuario" value="@Html.DisplayFor(modelItem => item.usuario)" />
+                }
+            }
+        }
+
+
+
+    </form>
+    <br /><br /><br />
+</div>

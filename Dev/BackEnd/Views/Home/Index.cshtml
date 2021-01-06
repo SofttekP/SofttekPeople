@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WellnessPeople.Models.Idioma>
+@{
+    ViewData["Title"] = "Portal de Wellness People - Softtek";
+    Layout = "_Layout";
+}
+
+<table border="0" width="80%">
+    <tr>
+        <td>
+            <img src="~/images/logoSofftekColor.png" /><br />
+        </td>
+        <td style="text-align:center">
+            <h1 class="display-4">Bienvenido/a</h1>
+            <p>Puede obtener más información sobre People Softtek <a href="https://www.softtek.com" target="_blank">aquí</a></p>
+        </td>
+    </tr>
+</table>
+
+<form id="frmHome" name="frmHome" action="/login/index" method="post">
+
+    <div id="ImagenesCorp" name="ImagenesCorp">
+
+        <div id="Bienvenida" name="Bienvenida" style="text-align:center">
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<img src="~/images/logoWellness.png" /><br /><br /><br />
+        </div>
+
+        <div id="Banderas" name="Banderas" style="text-align:center">
+            <h1 class="display-5">Seleccione el país:</h1> <br />
+
+            <input type="hidden" id="idPais" name="idPais" />
+            <input type="hidden" id="nombrePais" name="nombrePais" />
+            <input type="hidden" id="idIdioma" name="idIdioma" />
+            <input type="hidden" id="idioma" name="idioma" />
+            <input type="hidden" id="banderaRuta" name="banderaRuta" />
+
+
+            @if (Model != null)
+            {
+                @foreach (var item in Model)
+                {
+                    var @etqIdPais = @Html.DisplayFor(modelItem => item.id_pais);
+                    var @etqNombrePais = @Html.DisplayFor(modelItem => item.nombre_pais);
+                    var @etqBanderaPais = @Html.DisplayFor(modelItem => item.bandera_pais);
+                    var @etqIdIdioma = @Html.DisplayFor(modelItem => item.Id);
+                    var @etqNombreIdioma = @Html.DisplayFor(modelItem => item.nombre);
+
+                    <input type="image" id="@etqIdIdioma" value="@etqNombrePais" src="@etqBanderaPais" alt="@etqNombrePais" onclick="javascript:SeleccionPais(@etqIdPais, '@etqNombrePais', @etqIdIdioma, '@etqNombreIdioma', '@etqBanderaPais');" />
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                }
+            }
+
+        </div>
+    </div>
+</form>

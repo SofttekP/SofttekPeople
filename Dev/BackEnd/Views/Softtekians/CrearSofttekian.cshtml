@@ -1,0 +1,99 @@
+﻿@model WellnessPeople.Models.Softtekian
+
+@{
+    ViewData["Title"] = "Crear Softtekian";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+<br />
+<h2>Crear Softtekian</h2>
+<hr />
+
+<p class="float-right">
+    <img src="~/images/iconoatras_Pink.png" onclick="javascript:location.href='/PanelAdmin/Index'" style="cursor: pointer;" />
+</p>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AgregarSofttekian" method="post">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <b><label asp-for="primer_nombre" class="control-label"></label></b>
+                <input asp-for="primer_nombre" class="form-control" />
+                <span asp-validation-for="primer_nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="segundo_nombre" class="control-label"></label></b>
+                <input asp-for="segundo_nombre" class="form-control" />
+                <span asp-validation-for="segundo_nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="primer_apellido" class="control-label"></label></b>
+                <input asp-for="primer_apellido" class="form-control" />
+                <span asp-validation-for="primer_apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="segundo_apellido" class="control-label"></label></b>
+                <input asp-for="segundo_apellido" class="form-control" />
+                <span asp-validation-for="segundo_apellido" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <b><label asp-for="sexo" class="control-label"></label></b>
+                <select asp-for="id_sexo" class="form-control" asp-items="@(new SelectList(ViewBag.DepList, "id_sexo", "sexo"))">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <b><label asp-for="estado_civil" class="control-label"></label></b>
+                <input asp-for="estado_civil" class="form-control" />
+                <span asp-validation-for="estado_civil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="fecha_nacimiento" class="control-label"></label></b>
+                <input asp-for="fecha_nacimiento" class="form-control" />
+                <span asp-validation-for="fecha_nacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="email" class="control-label"></label></b>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="direccion_fisica" class="control-label"></label></b>
+                <input asp-for="direccion_fisica" class="form-control" />
+                <span asp-validation-for="direccion_fisica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="nombre_rol" class="control-label"></label></b>
+                <select asp-for="id_rol" class="form-control" asp-items="@(new SelectList(ViewBag.DepList, "id", "nombre_rol"))">
+                </select>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="esPeople" class="control-label"></label></b>
+                <input asp-for="esPeople" class="form-control" />
+                <span asp-validation-for="esPeople" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <b><label asp-for="habilitado" class="control-label"></label></b>
+                <input asp-for="habilitado" class="form-control" />
+                <span asp-validation-for="habilitado" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a asp-action="ListarSofttekians" class="btn btn-outline-success">Listado de Softtekian</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

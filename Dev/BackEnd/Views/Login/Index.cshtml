@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<div id="ContenedorLogin">
+    <div id="Login1">
+        <h1>Iniciar sesión</h1>
+
+        <p style="text-align: justify;">
+            Utilice una cuenta local para iniciar sesión.
+            <br /><br /><br />
+            Utilice otro servicio para iniciar sesión.
+            No hay servicios de autenticación externos configurados.
+            Consulte este artículo para obtener detalles sobre cómo configurar esta aplicación
+            ASP.NET para admitir el inicio de sesión a través de servicios externos.
+            <br /><br />
+            Sus credenciales son personales y no transferibles, por lo cual no las podrá suministrar a terceros.
+            <br /><br />
+            <h5>Usted está en la página de Softtek @ViewBag.NombrePais, con idioma en @ViewBag.idioma </h5>
+        </p>
+
+    </div>
+    <div id="Login2">
+        <img src="~/images/bannerLogin.png" alt="Banner Softtek" />
+        <br /><br />
+             <h5>Autenticación de Usuario</h5>
+              El acceso al sistema debe ser únicamente para personas autorizadas. 
+        <br /><b /><br />
+            <div id="Login11" style="text-align: center">
+            <img src="~/images/logoSofttek.png" alt="Softtek" width="100" />
+        </div>
+            <div id="Login21">
+
+                <form id="frmLogin" name="frmLogin" method="post" action="/PanelAdmin/Index" onsubmit="return ValidarInicioSesion();">
+
+                    <table width="100%" border="0">
+                        <tr>
+                            <td>
+                                <img src="~/images/imgIcoUsuario.png" /> Usuario:
+                            </td>
+                            <td>
+                                <input type="text" id="txtUsuario" placeholder="Ingrese el usuario" class="form-control" />
+                            </td>
+                            <td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="~/images/imgIcoClave.png" placeholder="Password" /> Password:
+                            </td>
+                            <td>
+                                <input type="password" id="txtPassword" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <h6>Dominio: Softtek.com</h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="height:50px">
+
+                                <input type="submit" id="btnIngresar" class="btn btn-success" value="Ingresar">&nbsp;&nbsp;
+
+                                <input id="btnCancelar" type="button" value="Cancelar" onclick="javascript:window.location.href = '/home/index';" />
+                            </td>
+                        </tr>
+                   </table>
+                    <input type="hidden" id="Usuario" name="Usuario" value="" />
+                </form>
+                <div class="overlay">
+                    <div id="loading-img"></div>
+                </div>
+            </div>
+    </div>
+</div>

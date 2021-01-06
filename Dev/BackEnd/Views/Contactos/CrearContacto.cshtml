@@ -1,0 +1,70 @@
+﻿@model WellnessPeople.Models.Contacto
+
+@{
+    ViewData["Title"] = "Crear Contacto";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+<br />
+<h2>@ViewData["Title"] </h2>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AgregarContacto" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="text" asp-for="Id" />
+                <!--<input type="hidden" asp-for="habilitada" /> -->
+                <label asp-for="nombre_contacto" class="control-label"></label>
+                <input asp-for="nombre_contacto" class="form-control" />
+                <span asp-validation-for="nombre_contacto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="direccion_fisica" class="control-label"></label>
+                <input asp-for="direccion_fisica" class="form-control" />
+                <span asp-validation-for="direccion_fisica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefono" class="control-label"></label>
+                <input asp-for="telefono" class="form-control" />
+                <span asp-validation-for="telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Latitud" class="control-label"></label>
+                <input asp-for="Latitud" class="form-control" />
+                <span asp-validation-for="Latitud" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Longitud" class="control-label"></label>
+                <input asp-for="Longitud" class="form-control" />
+                <span asp-validation-for="Longitud" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombre_sede" class="control-label"></label>
+                <input asp-for="nombre_sede" class="form-control" />
+                <span asp-validation-for="nombre_sede" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="nombre_TipoContacto" class="control-label"></label>
+            <select asp-for="id_tipoContacto" class="form-control" asp-items="@(new SelectList(ViewBag.DepList,"id_tipoContacto","nombre_TipoContacto"))">
+            </select>
+        </div>*@
+
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-action="ListarContactos" class="btn btn-outline-success">Listado de Contactos</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

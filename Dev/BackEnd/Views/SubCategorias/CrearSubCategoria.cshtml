@@ -1,0 +1,51 @@
+﻿@model WellnessPeople.Models.SubCategoria
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+*@
+@{
+    ViewData["Title"] = "Crear SubCategoría";
+    Layout = "~/Views/Shared/_Layout_Backend.cshtml";
+}
+
+<br />
+<h2>Crear SubCategoria</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AgregarSubCategoria" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" />
+                <!--<input type="hidden" asp-for="habilitada" /> -->
+                <b><label asp-for="nombre_subcategoria" class="control-label"></label></b>
+                <input asp-for="nombre_subcategoria" class="form-control" />
+                <span asp-validation-for="nombre_subcategoria" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <b> <label asp-for="nombre_categoria" class="control-label"></label></b>
+                <select asp-for="Id_categoria" class="form-control" asp-items="@(new SelectList(ViewBag.DepList,"Id","nombre"))">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <b><label asp-for="habilitada" class="control-label"></label></b>
+                <input asp-for="habilitada" class="form-control" />
+                <span asp-validation-for="habilitada" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a asp-action="ListarSubCategorias" class="btn btn-outline-success">Listado de SubCategorías</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
