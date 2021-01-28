@@ -20,6 +20,20 @@ import { AdministracionComponent } from './people/administracion/administracion.
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { FormsModule } from '@angular/forms'; 
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarEventosComponent } from './people/calendar-eventos/calendar-eventos.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
+
 
 
 @NgModule({
@@ -34,8 +48,15 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     NgSelectModule,
     FormsModule,
+    FullCalendarModule,
     AngularFireModule.initializeApp(environment.firebase),
     PopoverModule.forRoot(),
+    NgbModule,
+    IvyCarouselModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   declarations: [
     AppComponent,
@@ -45,7 +66,8 @@ import { FormsModule } from '@angular/forms';
     BeneficiosComponent,
     ReconocimientosComponent,
     EventosComponent,
-    AdministracionComponent
+    AdministracionComponent,
+    CalendarEventosComponent
     
   ],
   providers: [],

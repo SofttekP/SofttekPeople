@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ConveniosDataService, Convenios } from './convenios.data.service';
 
 @Component({
   selector: 'app-convenios',
@@ -7,18 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConveniosComponent implements OnInit {
 
-  constructor() { }
-  listaConvenios: Array<any> = ['Convenios en reactivación', 'Cultura, recreación y deporte', 'Educación', 'Hogar y Tecnología', 'Salud, belleza y bienestar', 'Turismo', 'Vehiculos'];
-  infoConvenios = true;
-  imgConvReactivacion = '/assets/img/convenios/convenioReactivacion.jpg';
-  ngOnInit(): void {
+  constructor(private conveniosDataService: ConveniosDataService) { }
+  verContenido: boolean = false;
+  urlImage: string = "src/assets/img/details/5.jpg";
+  tituloConvenio: string = "";
+  conveniosAsync: Observable<Convenios[]>;
+  selectedConveniodAsync = '0';
+  
 
+
+  ngOnInit(): void {
+    this.conveniosAsync = this.conveniosDataService.getConvenios();
   }
-  // tslint:disable-next-line:typedef
-  visualizarInfoConvenio(value){
-    // tslint:disable-next-line:triple-equals
-    if (value == 1){
-      this.infoConvenios = false;
-    }
+  
+  seleccionConvenio(){
+      this.verContenido = true;
+    
   }
 }

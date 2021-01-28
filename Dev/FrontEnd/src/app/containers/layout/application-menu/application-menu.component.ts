@@ -6,7 +6,7 @@ import { Component, HostListener } from '@angular/core';
 })
 
 export class ApplicationMenuComponent {
-  isOpen = false;
+  isOpen = true;
 
   constructor() {
   }

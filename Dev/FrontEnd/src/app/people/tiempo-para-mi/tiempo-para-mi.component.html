@@ -12,71 +12,31 @@
                         <div class="card-body">
                             <div class="col-12 list" *ngIf="displayMode==='image'">
                                 <div class="row">
-                                    <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-                                        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{pruebasPopOver}} popoverTitle={{pruebaPopOver}}
+                                    <div *ngFor="let datosTiempo of datosTiempoParaMiAsync" class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                                        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionPopOver}} popoverTitle={{generalPopOver}}
                                         placement="top">
-                                            <a ><img class="card-img-top" src="{{imgCumpleanos}}" (click)="abrirModal()"></a>
-                                        </div>
-                                        
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-12" align="center">
-                                                    <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">Día de cumpleaños</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-                                        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{popOverDiaFamilia}} popoverTitle={{popOverFamilia}}
-                                             placement="top">
-                                            <a ><img class="card-img-top" src="{{imgFamilia}}" (click)="abrirModalFamilia()"></a>
+                                            <a ><img class="card-img-top" src="{{datosTiempo.img}}" (click)="abrirModal(mensajeModalDescripcion)"></a>
                                         </div>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-12" align="center">
-                                                    <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">Día de la familia</span>
+                                                    <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">{{datosTiempo.subCategoria}}</span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-                                        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{popOverDiaEmergencia}} popoverTitle={{popOverEmergencia}}
-                                             placement="top">
-                                            <a ><img class="card-img-top" src="{{imgEmergencia}}" (click)="abrirModalEmergencia()"></a>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-12" align="center">
-                                                    <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">Día para emergencias medicas</span>
-                                                </div>
+                                        <ng-template #mensajeModalDescripcion let-modal data-backdrop="static" data-keyboard="true">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title pull-left">{{datosTiempo.tituloCategoria}}</h4>
+                                                <button type="button" class="close pull-right" aria-label="Close" (click)="modal.close('Save click')"><span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-                                        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{popOverVacacion}} popoverTitle={{popOverVacaciones}}
-                                             placement="top">
-                                            <a ><img class="card-img-top" src="{{imgVacaciones}}" (click)="abrirModalVacaciones()"></a>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-12" align="center">
-                                                    <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">Vacaciones</span>
-                                                </div>
+                                            <div  class="modal-body">
+                                                {{datosTiempo.descripcion}}
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-                                        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{popOverDiaBoda}} popoverTitle={{popOverBoda}}
-                                             placement="top">
-                                            <a ><img class="card-img-top" src="{{imgBoda}}" (click)="abrirModalBoda()"></a>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-12" align="center">
-                                                    <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">Día para tu boda</span>
-                                                </div>
+                                            <div class="modal-footer">
+                                                <span><a href={{datosTiempo.link}}>CONSULTA AQUÍ</a> la política y proceso para solicitarlos.</span>
                                             </div>
-                                        </div>
+                                        </ng-template>
                                     </div>
                                 </div>
                              </div>
