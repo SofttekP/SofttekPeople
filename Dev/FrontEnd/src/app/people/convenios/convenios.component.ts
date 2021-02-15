@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output, ViewChild, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ConveniosDataService, Convenios } from './convenios.data.service';
+import orderData, { IOrder } from 'src/app/data/orders';
 
 @Component({
   selector: 'app-convenios',
@@ -9,21 +9,9 @@ import { ConveniosDataService, Convenios } from './convenios.data.service';
 })
 export class ConveniosComponent implements OnInit {
 
-  constructor(private conveniosDataService: ConveniosDataService) { }
-  verContenido: boolean = false;
-  urlImage: string = "src/assets/img/details/5.jpg";
-  tituloConvenio: string = "";
-  conveniosAsync: Observable<Convenios[]>;
-  selectedConveniodAsync = '0';
-  
-
+  constructor() { }
+  orders: IOrder[] = orderData;
 
   ngOnInit(): void {
-    this.conveniosAsync = this.conveniosDataService.getConvenios();
-  }
-  
-  seleccionConvenio(){
-      this.verContenido = true;
-    
   }
 }

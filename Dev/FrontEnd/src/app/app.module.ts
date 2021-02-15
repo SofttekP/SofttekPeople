@@ -28,6 +28,11 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarEventosComponent } from './people/calendar-eventos/calendar-eventos.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { AdministracionRolesComponent } from './people/administracion-roles/administracion-roles.component';
+import { AdministracionContenidoComponent } from './people/administracion-contenido/administracion-contenido.component';
+import { AdministracionPaisesComponent } from './people/administracion-paises/administracion-paises.component';
+import { AdministracionEventosComponent } from './people/administracion-eventos/administracion-eventos.component';
+import { SatisfacionComponent } from './people/satisfacion/satisfacion.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -67,7 +72,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ReconocimientosComponent,
     EventosComponent,
     AdministracionComponent,
-    CalendarEventosComponent
+    CalendarEventosComponent,
+    AdministracionRolesComponent,
+    AdministracionContenidoComponent,
+    AdministracionPaisesComponent,
+    AdministracionEventosComponent,
+    SatisfacionComponent
     
   ],
   providers: [],

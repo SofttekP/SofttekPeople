@@ -8,6 +8,7 @@ import { BeneficiosComponent } from '../../people/beneficios/beneficios.componen
 import { ReconocimientosComponent } from '../../people/reconocimientos/reconocimientos.component';
 import { EventosComponent } from '../../people/eventos/eventos.component';
 import { AdministracionComponent } from '../../people/administracion/administracion.component'
+import { CalendarEventosComponent } from '../../people/calendar-eventos/calendar-eventos.component'
 
 const routes: Routes = [
     {
@@ -21,6 +22,7 @@ const routes: Routes = [
             { path: 'reconocimientos', component:  ReconocimientosComponent},
             { path: 'eventos', component:  EventosComponent},
             { path: 'admin', component:  AdministracionComponent},
+            { path: 'calendario', component:  CalendarEventosComponent},
             
         ]
     }

@@ -37,8 +37,8 @@ export class BeneficiosComponent implements OnInit {
       this.tituloBeneficio  = this.beneficiosAsync.find(x=>x.id == this.idBeneficio).name;
       this.urlImage = this.beneficiosAsync.find(x=>x.id == this.idBeneficio).img;
     }
-      
-    
   }
+
+  
 
 }

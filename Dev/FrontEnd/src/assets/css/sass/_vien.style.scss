@@ -258,11 +258,10 @@ perfect-scrollbar > .ps {
 
 .logo-single {
   width: 110px;
-  height: 35px;
+  height: 110px;
   background: url($logo-path) no-repeat;
   background-position: center center;
   display: inline-block;
-  margin-bottom: 60px;
   background-size: contain;
 }
 
@@ -2066,7 +2065,7 @@ a.btn-secondary:not([href]):not([tabindex]) {
 
 .logo {
   width: 110px;
-  height: 40px;
+  height: 60px;
   background: url($logo-path) no-repeat;
   background-position: center center;
   margin: 0 auto;
@@ -9548,13 +9547,13 @@ footer.page-footer {
       @include respond-below(lg) {
         height: $navbar-height-md;
         .navbar-logo {
-          width: 100px;
-          height: 30px;
+          width: 100%;
+          height: 100%;
 
           .white,
           .dark {
-            width: 100px;
-            height: 30px;
+            width: 100%;
+            height: 100%;
           }
         }
       }
@@ -9570,20 +9569,20 @@ footer.page-footer {
     }
 
     .navbar-logo {
-      width: 120px;
-      height: 40px;
+      width: 100%;
+      height: 100%;
 
       .white {
         display: inline-block;
-        width: 120px;
-        height: 40px;
+        width: 100%;
+        height: 100%;
         background: url($lp-logo-path);
         background-repeat: no-repeat;
       }
 
       .dark {
-        width: 120px;
-        height: 40px;
+        width: 100%;
+        height: 100%;
         background: url($lp-logo-path-pinned);
         background-repeat: no-repeat;
         display: none;
