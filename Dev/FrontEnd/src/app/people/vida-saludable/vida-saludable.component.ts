@@ -1,7 +1,9 @@
 import {  Component, OnInit, AfterViewChecked } from '@angular/core';
-import { vidaSaludableDataService,VidaSaludable } from './vida-saludable.data.service';
+import { vidaSaludableDataService } from './vida-saludable.data.service';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { HighlightService } from '../../shared/highlight.service';
+import { IProduct } from 'src/app/data/api.service';
+import products from 'src/app/data/products';
 
 
 
@@ -13,10 +15,12 @@ import { HighlightService } from '../../shared/highlight.service';
 })
 export class VidaSaludableComponent implements   OnInit{
   
+  listaActividadesEquilibrio:any;
+  actividadPrincipal:any;
   listaVidaSaludables:any;
   listaImagenes: any;
   highlighted: boolean = false;
-  
+  data: IProduct[] = products.slice(0, 18);
 
   constructor(private vidaSaludableDataService: vidaSaludableDataService, config: NgbCarouselConfig, private highlightService: HighlightService) {
     config.interval = 5000;
@@ -30,6 +34,17 @@ export class VidaSaludableComponent implements   OnInit{
       this.vidaSaludableDataService.getItemsVidaSaludable().subscribe(
         data => {
           this.listaVidaSaludables =  data;
+      });
+
+
+      this.vidaSaludableDataService.getItemsActividadesEquilibrio().subscribe(
+        data => {
+          this.listaActividadesEquilibrio =  data;
+      });
+
+      this.vidaSaludableDataService.getItemsActividadPrincilpalEquilibrio().subscribe(
+        data => {
+          this.actividadPrincipal =  data;
       });
   }
 

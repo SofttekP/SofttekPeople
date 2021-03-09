@@ -6,7 +6,6 @@ import { ConveniosComponent } from '../../people/convenios/convenios.component';
 import { VidaSaludableComponent } from '../../people/vida-saludable/vida-saludable.component';
 import { BeneficiosComponent } from '../../people/beneficios/beneficios.component';
 import { ReconocimientosComponent } from '../../people/reconocimientos/reconocimientos.component';
-import { EventosComponent } from '../../people/eventos/eventos.component';
 import { AdministracionComponent } from '../../people/administracion/administracion.component'
 import { CalendarEventosComponent } from '../../people/calendar-eventos/calendar-eventos.component'
 
@@ -20,9 +19,8 @@ const routes: Routes = [
             { path: 'vidaSaludable', component:  VidaSaludableComponent},
             { path: 'beneficios', component:  BeneficiosComponent},
             { path: 'reconocimientos', component:  ReconocimientosComponent},
-            { path: 'eventos', component:  EventosComponent},
             { path: 'admin', component:  AdministracionComponent},
-            { path: 'calendario', component:  CalendarEventosComponent},
+            { path: 'eventos', component:  CalendarEventosComponent},
             
         ]
     }

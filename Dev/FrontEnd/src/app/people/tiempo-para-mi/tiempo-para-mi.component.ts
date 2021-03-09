@@ -4,6 +4,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalGeneralComponent } from './modal-general';
 import { TiempoParaMiDataService, TiempoParaMi } from './tiempo-para-mi.data.service';
 import { NgbModal, NgbModalOptions, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import products from 'src/app/data/products';
+import { IProduct } from 'src/app/data/api.service';
+
 
 
 
@@ -23,11 +26,11 @@ export class TiempoParaMiComponent implements OnInit {
   datosTiempoParaMiAsync: any;
   displayMode = 'image';
   activeIndex = 0;
-  
   bsModalRef: BsModalRef;
-  constructor( private translateService: TranslateService, private tiempoDatService: TiempoParaMiDataService, private modalService: NgbModal) { }
   
- ngOnInit(): void {
+  constructor( private translateService: TranslateService, private tiempoDatService: TiempoParaMiDataService, private modalService: NgbModal) { }
+  data: IProduct[] = products.slice(0, 18);
+  ngOnInit(): void {
 
   this.tiempoDatService.getDatosTiempoParaMi().subscribe(
     data => {

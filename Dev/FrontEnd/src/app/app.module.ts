@@ -15,7 +15,6 @@ import { ConveniosComponent } from './people/convenios/convenios.component';
 import { VidaSaludableComponent } from './people/vida-saludable/vida-saludable.component';
 import { BeneficiosComponent } from './people/beneficios/beneficios.component';
 import { ReconocimientosComponent } from './people/reconocimientos/reconocimientos.component';
-import { EventosComponent } from './people/eventos/eventos.component';
 import { AdministracionComponent } from './people/administracion/administracion.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PopoverModule } from 'ngx-bootstrap/popover';
@@ -70,7 +69,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     VidaSaludableComponent,
     BeneficiosComponent,
     ReconocimientosComponent,
-    EventosComponent,
     AdministracionComponent,
     CalendarEventosComponent,
     AdministracionRolesComponent,

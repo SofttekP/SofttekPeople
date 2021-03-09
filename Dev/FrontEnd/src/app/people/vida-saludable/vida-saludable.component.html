@@ -1,6 +1,6 @@
 <div class="row " align="center">
     <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
-        <h1 class="content-header">Vida saludable</h1>
+        <h1 class="content-header">Equilibro de vida</h1>
     </div>
 </div>
 <div class="container-fluid pl-3 pt-3 pb-2 mb-3">
@@ -23,7 +23,54 @@
         </div>
     </div>
 </div>
- 
+<div class="row col-12">
+    <div class="col-sm-4 col-lg-4 col-xl-4 col-12 mb-3">
+        <div  *ngFor="let actividadPrincipal  of actividadPrincipal">
+            <div class="card">
+                <div class="position-relative">
+                <a routerLink="#"><img  class="card-img-top" [src]="actividadPrincipal.img" alt="Card image cap"></a>
+                <span class="badge badge-pill badge-theme-2 position-absolute badge-top-left">{{actividadPrincipal.status}}</span>
+                </div>
+                <div class="card-body">
+                <a routerLink="#">
+                    <h6 class="mb-3 listing-heading ellipsis">
+                    {{actividadPrincipal.title}}
+                    </h6>
+                </a>
+                <p class="text-muted text-small mb-2  font-weight-light">{{actividadPrincipal.description}}</p>
+                <footer>
+                    <p class="text-muted text-small mb-0 font-weight-light">{{actividadPrincipal.date}}</p>
+                </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class=" col-sm-8 col-lg-8 col-xl-8 col-12 mb-3">
+            <div class="row listing-card-container">
+                <div class="col-sm-6 col-lg-6 col-xl-4 col-12 mb-4" *ngFor="let equilibrio of listaActividadesEquilibrio">
+            <div class="card">
+                <div class="position-relative">
+                    <a routerLink="#"><img class="card-img-top" [src]="equilibrio.img" alt="Card image cap"></a>
+                    <span class="badge badge-pill badge-theme-2 position-absolute badge-top-left">{{equilibrio.status}}</span>
+                </div>
+                <div class="card-body">
+                <a routerLink="#">
+                    <h6 class="mb-3 listing-heading ellipsis">
+                    {{equilibrio.title}}
+                    </h6>
+                </a>
+                <p class="text-muted text-small mb-0 font-weight-light">{{equilibrio.description}}</p>
+                <footer>
+                    <p class="text-muted text-small mb-0 font-weight-light">{{equilibrio.date}}</p>
+                </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+
 
 
 
