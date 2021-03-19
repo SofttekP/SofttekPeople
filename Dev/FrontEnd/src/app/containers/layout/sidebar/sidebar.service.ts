@@ -15,7 +15,7 @@ export class SidebarService {
   private initialSidebar: ISidebar = {
     containerClassnames: environment.defaultMenuType,
     menuClickCount: 0,
-    selectedMenuHasSubItems: environment.defaultMenuType === 'menu-menu-sub-hidden',
+    selectedMenuHasSubItems: environment.defaultMenuType === 'menu-default',
   };
   private sidebar = new BehaviorSubject<ISidebar>(this.initialSidebar);
   subHiddenBreakpoint: number = environment.subHiddenBreakpoint;

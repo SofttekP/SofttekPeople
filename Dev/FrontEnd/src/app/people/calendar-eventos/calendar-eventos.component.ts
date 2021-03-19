@@ -1,4 +1,4 @@
-import { Component, OnInit,ChangeDetectionStrategy, ViewChild,TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { addDays, CalendarOptions, startOfDay } from '@fullcalendar/angular';
 import { CalendarEvent, CalendarEventAction } from 'angular-calendar';
 import { addHours, endOfMonth, subDays } from 'date-fns'; 
@@ -108,6 +108,5 @@ export class CalendarEventosComponent implements OnInit {
     }
   };
 
-  ngOnInit(): void {
-  };
+  ngOnInit(): void {  };
 }

@@ -12,7 +12,6 @@ import { getThemeColor, setThemeColor } from 'src/app/utils/util';
   templateUrl: './topnav.component.html',
 })
 export class TopnavComponent implements OnInit, OnDestroy {
-  buyUrl = environment.buyUrl;
   adminRoot = environment.adminRoot;
   sidebar: ISidebar;
   subscription: Subscription;

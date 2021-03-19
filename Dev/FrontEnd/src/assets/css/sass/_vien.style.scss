@@ -127,6 +127,11 @@ html {
   --separator-color: #{$separator-color};
 }
 
+#copy{
+  font-size: 0.83rem;
+}
+
+
 body {
   font-family: "Helvetica", Bold;
   font-size: 1.1rem;
@@ -519,7 +524,7 @@ a {
   color: $primary-color;
   transition: color $animation-time-short;
   outline: initial !important;
-
+  font-size: 1.1rem;
   &:hover,
   &:active {
     text-decoration: initial;
@@ -532,7 +537,7 @@ a {
 }
 
 p {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   line-height: 1.3rem;
   font-family: "Nunito", sans-serif;
 }

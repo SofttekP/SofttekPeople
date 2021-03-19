@@ -1,33 +1,68 @@
-<div class="row ">
-    <div class="col-12 ">
-      <div class="card mb-4 ">
-        <div class="card-body ">
-          <h5 class="text-center mt-5 mb-5">Beneficios de Softtek para ti</h5>
-          <div class="row">
-            <div class="col-12 col-lg-6 mb-4 ">
-                <ng-select [(ngModel)]="idBeneficio" (change)="seleccionBeneficio()">
-                  <ng-option *ngFor="let beneficio of beneficiosAsync" [value]="beneficio.id">{{beneficio.name}}</ng-option>
-                </ng-select>
-              </div>
-        </div>
-    </div>
-</div>
-<div class="card mb-4" *ngIf="verContenido">
-    <img alt="detail" src={{urlImage}}  class="responsive border-0 card-img-top mb-3 " />
-    <div class="card-body">
-      <div class="mb-5">
-        <h5 class="card-title">{{tituloBeneficio}}</h5>
-        <p>
-            Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-        </p>
-      </div>
-      <div class="mb-5">
-        <h5 class="card-title">¿De dónde viene?</h5>
-        <p>
-            Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-        </p>
-      </div>
-    </div>
+<div class="row " align="center">
+  <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+      <h1 class="content-header">Beneficios</h1>
   </div>
-  
+</div>
+<div class="card">
+  <div class="card-body">
+    <aw-wizard [navBarLayout]="'large-empty-symbols'">
+      <aw-wizard-step stepTitle="Beneficio 1" style="min-height: 230px;">
+        <ng-template awWizardStepSymbol><i class="iconsminds-roof"></i></ng-template>
+        <div class="text-right">
+          <button type="button" class="btn btn-primary" awPreviousStep disabled>{{ 'wizard.prev' | translate }}</button>{{" "}}
+          <button type="button" class="btn btn-primary" awNextStep>{{ 'wizard.next' | translate }}</button>
+        </div>
+        <div>
+          <div ><img src="assets\img\banners\banner-2.jpg" ></div>
+          <div class="card-body">
+            <H1>Beneficio 1</H1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+        
+      </aw-wizard-step>
+      <aw-wizard-step stepTitle="Beneficio 2" style="min-height: 230px;">
+        <ng-template awWizardStepSymbol><i class="iconsminds-student-hat"></i></ng-template>
+        <div class="text-right">
+          <button type="button" class="btn btn-primary" awPreviousStep>{{ 'wizard.prev' | translate }}</button>{{" "}}
+          <button type="button" class="btn btn-primary" awNextStep>{{ 'wizard.next' | translate }}</button>
+        </div>
+        <div>
+          <div>
+            <div ><img src="assets\img\banners\banner-2.jpg" ></div>
+            <div class="card-body">
+              <H1>Beneficio 2</H1>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </aw-wizard-step>
+      <aw-wizard-step stepTitle="Experiencias" style="min-height: 230px;">
+        <ng-template awWizardStepSymbol><i class="iconsminds-tee-mug"></i></ng-template>
+        <div class="text-right">
+          <button type="button" class="btn btn-primary" awPreviousStep >{{ 'wizard.prev' | translate }}</button>{{" "}}
+          <button type="button" class="btn btn-primary" awNextStep disabled>{{ 'wizard.next' | translate }}</button>
+        </div>
+        <div>
+          <div class="form-group">
+            <label>{{ 'forms.city' | translate }}</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label>{{ 'forms.address' | translate }}</label>
+            <textarea class="form-control" rows="2"></textarea>
+          </div>
+        </div>
+      </aw-wizard-step>
+    </aw-wizard>
+  </div>
+</div>
+
+
+
 

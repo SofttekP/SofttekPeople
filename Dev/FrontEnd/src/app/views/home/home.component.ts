@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   showMobileMenu = false;
 
-  buyUrl = environment.buyUrl;
+ 
   adminRoot = environment.adminRoot;
 
   slideSettings = {

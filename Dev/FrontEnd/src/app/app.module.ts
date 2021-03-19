@@ -23,15 +23,21 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // the main connecto
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
+//import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { CalendarEventosComponent } from './people/calendar-eventos/calendar-eventos.component';
+//import { CalendarEventosComponent } from './people/calendar-eventos/calendar-eventos.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AdministracionRolesComponent } from './people/administracion-roles/administracion-roles.component';
 import { AdministracionContenidoComponent } from './people/administracion-contenido/administracion-contenido.component';
 import { AdministracionPaisesComponent } from './people/administracion-paises/administracion-paises.component';
 import { AdministracionEventosComponent } from './people/administracion-eventos/administracion-eventos.component';
 import { SatisfacionComponent } from './people/satisfacion/satisfacion.component';
+import { WizardEndStepComponent } from '../app/containers/wizard/end-step/wizard-end-step.component';
+import { WizardValidationComponent } from '../app/containers/wizard/validation/wizard-validation.component';
+import { WizardIconsComponent } from '../app/containers/wizard/icons/wizard-icons.component';
+import { WizardVerticalComponent } from '../app/containers/wizard/vertical/wizard-vertical.component';
+import { WizardBasicComponent } from '../app/containers/wizard/basic/wizard-basic.component';
+import { ArchwizardModule } from 'angular-archwizard';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -42,6 +48,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 
 @NgModule({
   imports: [
+    ArchwizardModule,
     BrowserModule ,
     ModalModule.forRoot(),
     ViewsModule,
@@ -52,15 +59,15 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     NgSelectModule,
     FormsModule,
-    FullCalendarModule,
+    //FullCalendarModule,
     AngularFireModule.initializeApp(environment.firebase),
     PopoverModule.forRoot(),
     NgbModule,
     IvyCarouselModule,
-    CalendarModule.forRoot({
+    /*CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    })
+    })*/
   ],
   declarations: [
     AppComponent,
@@ -70,12 +77,22 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BeneficiosComponent,
     ReconocimientosComponent,
     AdministracionComponent,
-    CalendarEventosComponent,
+    //CalendarEventosComponent,
     AdministracionRolesComponent,
     AdministracionContenidoComponent,
     AdministracionPaisesComponent,
     AdministracionEventosComponent,
-    SatisfacionComponent
+    SatisfacionComponent,
+    WizardBasicComponent,
+    WizardEndStepComponent,
+    WizardValidationComponent,
+    WizardIconsComponent,
+    WizardVerticalComponent,
+    WizardBasicComponent,
+    WizardEndStepComponent,
+    WizardValidationComponent,
+    WizardIconsComponent,
+    WizardVerticalComponent
     
   ],
   providers: [],
