@@ -24,7 +24,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+//import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 //import { CalendarEventosComponent } from './people/calendar-eventos/calendar-eventos.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AdministracionRolesComponent } from './people/administracion-roles/administracion-roles.component';
