@@ -1,12 +1,16 @@
-<div class="card d-flex flex-row mb-3" *ngFor="let order of orders">
+<div class="row " style="text-align: center;">
+  <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+      <h1 class="content-header">Convenios</h1>
+  </div>
+</div>
+<div class="card d-flex flex-row mb-3 card col-xl-12 col-lg-12 col-md-12 col-12 col-sm-12" *ngFor="let convenios of datosConveniosAsync">
   <div class="d-flex flex-grow-1 min-width-zero">
-    <div
-      class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
-      <a href="javascript:;" class="list-item-heading mb-1 truncate w-40 w-xs-100">{{order.name}}</a>
-      <p class="mb-1 text-muted text-small w-15 w-xs-100">{{order.address}}</p>
-      <p class="mb-1 text-muted text-small w-15 w-xs-100">{{order.date}}</p>
+    <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+      <img src ="{{convenios.img}}" style="width: 7%" (click)="openLightbox(convenios.img)">
+      <a href="javascript:;" class="list-item-heading mb-1">{{convenios.name}}</a>
+      <p class="mb-1 text-muted text-small ">{{convenios.descripcion}}</p>
       <div class="w-15 w-xs-100 text-right">
-        <span [class]="'badge badge-pill badge-'+order.statusColor">{{order.status}}</span>
+        <span [class]="'badge badge-pill badge-'+convenios.statusColor">{{convenios.categoria}}</span>
       </div>
     </div>
   </div>

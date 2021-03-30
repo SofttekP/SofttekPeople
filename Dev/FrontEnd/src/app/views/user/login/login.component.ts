@@ -21,7 +21,7 @@ export class LoginComponent {
 
 
   onSubmit(): void {
-    if (this.loginForm.valid || this.buttonDisabled) {
+    if ( this.buttonDisabled) {
       this.router.navigate([environment.adminRoot]);
       return;
     }

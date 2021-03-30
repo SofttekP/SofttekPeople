@@ -4,13 +4,11 @@ import { Observable, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
 export interface IAdministracion {
-  id: string;
-  subCategoria: string;
-  tituloCategoria: string;
-  img: string;
-  descripcion: string;
-  link: string;
-  condiciones: string;
+  title: string;
+  icon: string;
+  generalPopOver: string;
+  descripcionPopOver: string;
+  url: string;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -19,51 +17,68 @@ export class AdministracionDataService {
   
   private _administracion = [
     {
-      id: '1',
-      subCategoria: 'Roles',
-      tituloCategoria: 'Inofrmación',
-      img: '/assets/img/TiempoParaMi/ITSYOU400.png',
-      descripcion: 'Por crear y mantener un ambiente adecuado a través de tu trato hacia mí y otros Softtekians',
-      link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
-      condiciones: ''
+      title: 'Roles', 
+      icon: 'iconsminds-male-female', 
+      generalPopOver :'Administrar Usuarios', 
+      descripcionPopOver:'Acá puesdes gestionar los usuarios con rol administrador', 
+      url:'app/adminRol'
       },
     {
-      id: '1',
-      subCategoria: 'Home',
-      tituloCategoria: 'Inofrmación',
-      img: '/assets/img/TiempoParaMi/ITSYOU400.png',
-      descripcion: 'Por crear y mantener un ambiente adecuado a través de tu trato hacia mí y otros Softtekians',
-      link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
-      condiciones: ''
+      title: 'Paises', 
+      icon: 'iconsminds-map-marker-2', 
+      generalPopOver :'Administrar Paises', 
+      descripcionPopOver:'Acá puesdes gestionar los paises', 
+      url:'app/adminPaises'
     },
     {
-      id: '1',
-      subCategoria: 'Paises',
-      tituloCategoria: 'Inofrmación',
-      img: '/assets/img/TiempoParaMi/ITSYOU400.png',
-      descripcion: 'Por crear y mantener un ambiente adecuado a través de tu trato hacia mí y otros Softtekians',
-      link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
-      condiciones: ''
+      title: 'Tiempo para mi ', 
+      icon: 'iconsminds-sand-watch-2', 
+      generalPopOver :'Administrar Contenido', 
+      descripcionPopOver:'Acá puesdes gestionar (imagenes, texto y links)', 
+      url:'app/adminTiempo'
     },
     {
-      id: '1',
-      subCategoria: 'Eventos',
-      tituloCategoria: 'Inofrmación',
-      img: '/assets/img/TiempoParaMi/ITSYOU400.png',
-      descripcion: 'Por crear y mantener un ambiente adecuado a través de tu trato hacia mí y otros Softtekians',
-      link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
-      condiciones: ''
+      title: 'Convenios', 
+      icon: 'iconsminds-handshake', 
+      generalPopOver :'Administrar Contenido', 
+      descripcionPopOver:'Acá puesdes gestionar (imagenes, texto y links)', 
+      url:'app/adminConvenios'
     },
     {
-      id: '1',
-      subCategoria: 'Satisfaccion',
-      tituloCategoria: 'Inofrmación',
-      img: '/assets/img/TiempoParaMi/ITSYOU400.png',
-      descripcion: 'Por crear y mantener un ambiente adecuado a través de tu trato hacia mí y otros Softtekians',
-      link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
-      condiciones: ''
+      title: 'Equilibrio de vida', 
+      icon: 'iconsminds-scale', 
+      generalPopOver :'Administrar Contenido', 
+      descripcionPopOver:'Acá puesdes gestionar (imagenes, texto y links)', 
+      url:'app/adminEquilibrio'
+    },
+    {
+      title: 'Beneficios', 
+      icon: 'iconsminds-friendster', 
+      generalPopOver :'Administrar Contenido', 
+      descripcionPopOver:'Acá puesdes gestionar (imagenes, texto y links)', 
+      url:'app/adminBeneficios'
+    },
+    {
+      title: 'Reconocimientos', 
+      icon: 'iconsminds-crown-2', 
+      generalPopOver :'Administrar Contenido', 
+      descripcionPopOver:'Acá puesdes gestionar (imagenes, texto, links e historial de reconocimiento)',
+      url:'app/adminRecomocimientos'
+    },
+    {
+      title: 'Eventos', 
+      icon: 'iconsminds-calendar-4', 
+      generalPopOver :'Administrar Contenido', 
+      descripcionPopOver:'Acá puesdes gestionar fechas y horas de los eventos', 
+      url:'app/adminEventos'
+    },
+    {
+      title: 'Satisfacíon', 
+      icon: 'iconsminds-line-chart-1', 
+      generalPopOver :'Estadisticas Satisfación', 
+      descripcionPopOver:'Acá puedes visualizar estadisticamente los resultados de encuestas', 
+      url:'app/satisfaccion'
     }
-    
   ];
 
   constructor(private http: HttpClient) { }
@@ -71,7 +86,7 @@ export class AdministracionDataService {
   getDatosAdministracion(term: string = null): Observable<IAdministracion[]> {
     let items = this.obtenerDatosAdministracion;
     if (term) {
-      items = items.filter(x => x.subCategoria.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1);
+      items = items.filter(x => x.title.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1);
     }
     return of(items).pipe(delay(500));
   }

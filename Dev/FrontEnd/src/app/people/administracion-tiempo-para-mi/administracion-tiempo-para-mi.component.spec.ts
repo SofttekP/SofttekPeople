@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdministracionContenidoComponent } from './administracion-contenido.component';
+import { AdministracionTiempoParaMiComponent } from './administracion-tiempo-para-mi.component';
 
 describe('AdministracionContenidoComponent', () => {
-  let component: AdministracionContenidoComponent;
-  let fixture: ComponentFixture<AdministracionContenidoComponent>;
+  let component: AdministracionTiempoParaMiComponent;
+  let fixture: ComponentFixture<AdministracionTiempoParaMiComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdministracionContenidoComponent ]
+      declarations: [ AdministracionTiempoParaMiComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdministracionContenidoComponent);
+    fixture = TestBed.createComponent(AdministracionTiempoParaMiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

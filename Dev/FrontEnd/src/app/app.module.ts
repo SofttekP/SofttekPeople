@@ -23,21 +23,25 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // the main connecto
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-//import { CalendarModule, DateAdapter } from 'angular-calendar';
-//import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-//import { CalendarEventosComponent } from './people/calendar-eventos/calendar-eventos.component';
+import { CalendarsComponent } from './people/calendar-eventos/calendar.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AdministracionRolesComponent } from './people/administracion-roles/administracion-roles.component';
-import { AdministracionContenidoComponent } from './people/administracion-contenido/administracion-contenido.component';
+import { AdministracionTiempoParaMiComponent } from './people/administracion-tiempo-para-mi/administracion-tiempo-para-mi.component';
 import { AdministracionPaisesComponent } from './people/administracion-paises/administracion-paises.component';
 import { AdministracionEventosComponent } from './people/administracion-eventos/administracion-eventos.component';
-import { SatisfacionComponent } from './people/satisfacion/satisfacion.component';
+import { SatisfaccionComponent } from './people/satisfaccion/satisfaccion.component';
 import { WizardEndStepComponent } from '../app/containers/wizard/end-step/wizard-end-step.component';
 import { WizardValidationComponent } from '../app/containers/wizard/validation/wizard-validation.component';
 import { WizardIconsComponent } from '../app/containers/wizard/icons/wizard-icons.component';
 import { WizardVerticalComponent } from '../app/containers/wizard/vertical/wizard-vertical.component';
 import { WizardBasicComponent } from '../app/containers/wizard/basic/wizard-basic.component';
 import { ArchwizardModule } from 'angular-archwizard';
+import { AdministracionConveniosComponent } from './people/administracion-convenios/administracion-convenios.component';
+import { AdministracionEquilibrioDeVidaComponent } from './people/administracion-equilibrio-de-vida/administracion-equilibrio-de-vida.component';
+import { AdministracionBeneficiosComponent } from './people/administracion-beneficios/administracion-beneficios.component';
+import { AdministracionReconocimientosComponent } from './people/administracion-reconocimientos/administracion-reconocimientos.component';
+import { UiSwitchModule } from 'node_modules/ngx-ui-switch';
+import { LightboxModule } from 'ngx-lightbox'
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -53,6 +57,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ModalModule.forRoot(),
     ViewsModule,
     AppRoutingModule,
+    UiSwitchModule,
+    LightboxModule,
     LayoutContainersModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot(),
@@ -77,12 +83,13 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BeneficiosComponent,
     ReconocimientosComponent,
     AdministracionComponent,
+    CalendarsComponent,
     //CalendarEventosComponent,
     AdministracionRolesComponent,
-    AdministracionContenidoComponent,
+    AdministracionTiempoParaMiComponent,
     AdministracionPaisesComponent,
     AdministracionEventosComponent,
-    SatisfacionComponent,
+    SatisfaccionComponent,
     WizardBasicComponent,
     WizardEndStepComponent,
     WizardValidationComponent,
@@ -92,8 +99,15 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     WizardEndStepComponent,
     WizardValidationComponent,
     WizardIconsComponent,
-    WizardVerticalComponent
+    WizardVerticalComponent,
+    AdministracionConveniosComponent,
+    AdministracionEquilibrioDeVidaComponent,
+    AdministracionBeneficiosComponent,
+    AdministracionReconocimientosComponent
     
+  ],
+  exports:[
+    CalendarsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

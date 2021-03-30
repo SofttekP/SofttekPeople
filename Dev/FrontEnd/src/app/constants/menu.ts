@@ -20,7 +20,7 @@ const data: IMenuItem[] = [
     roles: [UserRole.Admin, UserRole.Editor]
   },
   {
-    icon: 'simple-icon-like',
+    icon: 'iconsminds-handshake',
     label: 'Convenios',
     to: `${adminRoot}/convenios`,
      // roles: [UserRole.Editor],
