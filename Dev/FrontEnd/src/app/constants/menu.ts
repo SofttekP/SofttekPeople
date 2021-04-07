@@ -53,7 +53,7 @@ const data: IMenuItem[] = [
     to: `${adminRoot}/eventos`,
   },
   {
-    icon: 'iconsminds-administrator',
+    icon: 'iconsminds-gear-2',
     label: 'Administración',
     to: `${adminRoot}/admin`,
   },

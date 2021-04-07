@@ -45,6 +45,7 @@
               "./node_modules/ngx-lightbox/lightbox.css",
               "./node_modules/video.js/dist/video-js.min.css",
               "./node_modules/ngx-ui-switch/ui-switch.component.css",
+              "./node_modules/angular-calendar/css/angular-calendar.css",
               
               {
                 "input": "src/assets/css/sass/themes/vien.light.blueyale.scss",

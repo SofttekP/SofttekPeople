@@ -41,7 +41,10 @@ import { AdministracionEquilibrioDeVidaComponent } from './people/administracion
 import { AdministracionBeneficiosComponent } from './people/administracion-beneficios/administracion-beneficios.component';
 import { AdministracionReconocimientosComponent } from './people/administracion-reconocimientos/administracion-reconocimientos.component';
 import { UiSwitchModule } from 'node_modules/ngx-ui-switch';
-import { LightboxModule } from 'ngx-lightbox'
+import { LightboxModule } from 'ngx-lightbox';
+import { CommonModule } from '@angular/common';
+import { AdministrarCarruselEquilibrioVidaComponent } from './people/administrar-carrusel-equilibrio-vida/administrar-carrusel-equilibrio-vida.component';
+import { AdministrarInfoEquilibrioVidaComponent } from './people/administrar-info-equilibrio-vida/administrar-info-equilibrio-vida.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -65,6 +68,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     NgSelectModule,
     FormsModule,
+    CommonModule,
     //FullCalendarModule,
     AngularFireModule.initializeApp(environment.firebase),
     PopoverModule.forRoot(),
@@ -103,7 +107,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AdministracionConveniosComponent,
     AdministracionEquilibrioDeVidaComponent,
     AdministracionBeneficiosComponent,
-    AdministracionReconocimientosComponent
+    AdministracionReconocimientosComponent,
+    AdministrarCarruselEquilibrioVidaComponent,
+    AdministrarInfoEquilibrioVidaComponent
     
   ],
   exports:[

@@ -12,12 +12,13 @@ import { AdministracionPaisesComponent } from '../../people/administracion-paise
 import { AdministracionReconocimientosComponent } from '../../people/administracion-reconocimientos/administracion-reconocimientos.component';
 import { AdministracionRolesComponent } from '../../people/administracion-roles/administracion-roles.component';
 import { AdministracionTiempoParaMiComponent } from '../../people/administracion-tiempo-para-mi/administracion-tiempo-para-mi.component';
-import { CalendarsComponent } from '../../people/calendar-eventos/calendar.component';
+import { CalendarsComponent } from '../../people/calendar/calendar.component';
 import { SatisfaccionComponent } from '../../people/satisfaccion/satisfaccion.component';
 import { AdministracionConveniosComponent } from '../../people/administracion-convenios/administracion-convenios.component';
 import { AdministracionBeneficiosComponent } from '../../people/administracion-beneficios/administracion-beneficios.component';
+import { AdministrarCarruselEquilibrioVidaComponent } from '../../people/administrar-carrusel-equilibrio-vida/administrar-carrusel-equilibrio-vida.component';
+import { AdministrarInfoEquilibrioVidaComponent } from '../../people/administrar-info-equilibrio-vida/administrar-info-equilibrio-vida.component';
 import { AdministracionEquilibrioDeVidaComponent } from '../../people/administracion-equilibrio-de-vida/administracion-equilibrio-de-vida.component';
-
 const routes: Routes = [
     {
         path: '', component: AppComponent,
@@ -39,7 +40,9 @@ const routes: Routes = [
             { path: 'adminConvenios', component:  AdministracionConveniosComponent},
             { path: 'adminBeneficios', component:  AdministracionBeneficiosComponent},
             { path: 'adminEquilibrio', component:  AdministracionEquilibrioDeVidaComponent},
-            
+            { path: 'prueba', component: CalendarsComponent},
+            { path: 'adminInfo', component: AdministrarInfoEquilibrioVidaComponent},
+            { path: 'adminCarrusel', component: AdministrarCarruselEquilibrioVidaComponent}
         ]
     }
 ];

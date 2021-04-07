@@ -2,7 +2,8 @@ import {
   Component,
   ChangeDetectionStrategy,
   ViewChild,
-  TemplateRef
+  TemplateRef,
+  Pipe
 } from '@angular/core';
 import {
   startOfDay,
@@ -21,6 +22,7 @@ import {
   CalendarEventAction,
   CalendarEventTimesChangedEvent
 } from 'angular-calendar';
+
 
 const colors: any = {
   red: {
