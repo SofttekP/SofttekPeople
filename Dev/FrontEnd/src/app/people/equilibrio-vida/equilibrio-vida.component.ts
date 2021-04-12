@@ -1,5 +1,5 @@
 import {  Component, OnInit, AfterViewChecked } from '@angular/core';
-import { vidaSaludableDataService } from './vida-saludable.data.service';
+import { vidaSaludableDataService } from './equilibrio-vida.data.service';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { HighlightService } from '../../shared/highlight.service';
 import { IProduct } from 'src/app/data/api.service';
@@ -8,9 +8,9 @@ import products from 'src/app/data/products';
 
 
 @Component({
-  selector: 'app-vida-saludable',
-  templateUrl: './vida-saludable.component.html',
-  styleUrls: ['./vida-saludable.component.scss'],
+  selector: 'app-equilibrio-vida',
+  templateUrl: './equilibrio-vida.component.html',
+  styleUrls: ['./equilibrio-vida.component.scss'],
   providers: [NgbCarouselConfig]
 })
 export class VidaSaludableComponent implements   OnInit{

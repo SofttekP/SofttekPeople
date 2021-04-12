@@ -22,7 +22,7 @@ export class TiempoParaMiComponent implements OnInit {
   };
   closeResult: string;
   generalPopOver = '¿Sabes cómo solicitarlo?';
-  descripcionPopOver = 'Aca te contamos';
+  descripcionPopOver = 'Acá te contamos';
   datosTiempoParaMiAsync: any;
   displayMode = 'image';
   activeIndex = 0;

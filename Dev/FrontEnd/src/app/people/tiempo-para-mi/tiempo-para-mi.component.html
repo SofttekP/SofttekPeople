@@ -13,31 +13,33 @@
                             <div class="col-12 list" *ngIf="displayMode==='image'">
                                 <div class="row">
                                     <div *ngFor="let datosTiempo of datosTiempoParaMiAsync" class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-                                        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionPopOver}} popoverTitle={{generalPopOver}}
-                                        placement="top">
-                                            <a ><img class="card-img-top" src="{{datosTiempo.img}}" (click)="abrirModal(mensajeModalDescripcion)"></a>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-12" style="text-align: center;">
-                                                    <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">{{datosTiempo.subCategoria}}</span>
+                                        <div *ngIf=datosTiempo.estado >
+                                            <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionPopOver}} popoverTitle={{generalPopOver}}
+                                                placement="top">
+                                                <a ><img class="card-img-top" src="{{datosTiempo.img}}" (click)="abrirModal(mensajeModalDescripcion)"></a>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-12" style="text-align: center;">
+                                                        <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">{{datosTiempo.subCategoria}}</span>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            
+                                            <ng-template #mensajeModalDescripcion let-modal data-backdrop="static" data-keyboard="true">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title pull-left">{{datosTiempo.tituloCategoria}}</h4>
+                                                    <button type="button" class="close pull-right" aria-label="Close" (click)="modal.close('Save click')"><span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div  class="modal-body">
+                                                    {{datosTiempo.descripcion}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <span><a href={{datosTiempo.link}}>CONSULTA AQUÍ</a> la política y proceso para solicitarlos.</span>
+                                                </div>
+                                            </ng-template>
                                         </div>
-                                        
-                                        <ng-template #mensajeModalDescripcion let-modal data-backdrop="static" data-keyboard="true">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title pull-left">{{datosTiempo.tituloCategoria}}</h4>
-                                                <button type="button" class="close pull-right" aria-label="Close" (click)="modal.close('Save click')"><span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div  class="modal-body">
-                                                {{datosTiempo.descripcion}}
-                                            </div>
-                                            <div class="modal-footer">
-                                                <span><a href={{datosTiempo.link}}>CONSULTA AQUÍ</a> la política y proceso para solicitarlos.</span>
-                                            </div>
-                                        </ng-template>
                                     </div>
                                 </div>
                              </div>

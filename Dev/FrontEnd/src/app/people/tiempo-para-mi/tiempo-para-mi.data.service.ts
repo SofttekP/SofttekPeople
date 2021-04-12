@@ -50,16 +50,6 @@ export class TiempoParaMiDataService {
       icon: 'simple-icon-pencil'
     },
     {
-      id: '4',
-      subCategoria: 'Family Medical Emergencies',
-      tituloCategoria: 'Como solitiar tu día para emergencias medicas',
-      img: '/assets/img/TiempoParaMi/EMERGE400.png',
-      descripcion: 'Tú y tu familia son importantes para nosotros, por esta razón, ante cualquier eventualidad, te brindaremos un día laboral al año para atender emergencias médicas familiares. ',
-      link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
-      estado: true,
-      icon: 'simple-icon-pencil'
-    },
-    {
       id: '5',  
       subCategoria: 'Holidays',
       tituloCategoria: 'Como solicitar tus vacaciones',
@@ -67,6 +57,16 @@ export class TiempoParaMiDataService {
       descripcion: 'Disfruta de 15 días hábiles para hacer una pausa, tomar un descanso y recargar baterías.',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
       estado: true,
+      icon: 'simple-icon-pencil'
+    },
+    {
+      id: '4',
+      subCategoria: 'Family Medical Emergencies',
+      tituloCategoria: 'Como solitiar tu día para emergencias medicas',
+      img: '/assets/img/TiempoParaMi/EMERGE400.png',
+      descripcion: 'Tú y tu familia son importantes para nosotros, por esta razón, ante cualquier eventualidad, te brindaremos un día laboral al año para atender emergencias médicas familiares. ',
+      link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
+      estado: false,
       icon: 'simple-icon-pencil'
     }
     

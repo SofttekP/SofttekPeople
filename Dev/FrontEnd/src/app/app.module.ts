@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 import { LayoutContainersModule } from './containers/layout/layout.containers.module';
 import { TiempoParaMiComponent } from './people/tiempo-para-mi/tiempo-para-mi.component';
 import { ConveniosComponent } from './people/convenios/convenios.component';
-import { VidaSaludableComponent } from './people/vida-saludable/vida-saludable.component';
+import { VidaSaludableComponent } from './people/equilibrio-vida/equilibrio-vida.component';
 import { BeneficiosComponent } from './people/beneficios/beneficios.component';
 import { ReconocimientosComponent } from './people/reconocimientos/reconocimientos.component';
 import { AdministracionComponent } from './people/administracion/administracion.component';
