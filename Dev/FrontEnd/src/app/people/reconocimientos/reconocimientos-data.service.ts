@@ -115,8 +115,13 @@ export class ReconocimientosDataService {
 
   getDatosReconocimientos(term: string = null): Observable<IReconocimientos[]> {
     let items = this._reconocimientos;
+    debugger;
     if (term) {
-      items = items.filter(x => x.subCategoria.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1);
+     var x =  items.find(element => element.id == term);
+     if(x != null){
+      items.length = 0;
+      items.push(x)
+     }
     }
     return of(items).pipe(delay(500));
   }

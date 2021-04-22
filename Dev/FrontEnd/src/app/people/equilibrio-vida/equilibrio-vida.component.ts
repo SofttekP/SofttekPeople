@@ -1,6 +1,6 @@
-import {  Component, OnInit, AfterViewChecked } from '@angular/core';
+import {  Component, OnInit, AfterViewChecked, ViewChild } from '@angular/core';
 import { vidaSaludableDataService } from './equilibrio-vida.data.service';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HighlightService } from '../../shared/highlight.service';
 import { IProduct } from 'src/app/data/api.service';
 import products from 'src/app/data/products';
@@ -14,7 +14,7 @@ import products from 'src/app/data/products';
   providers: [NgbCarouselConfig]
 })
 export class VidaSaludableComponent implements   OnInit{
-  
+  @ViewChild('modalEncuesta', {static: false}) modalX: any;
   listaActividadesEquilibrio:any;
   actividadPrincipal:any;
   listaVidaSaludables:any;
@@ -22,13 +22,16 @@ export class VidaSaludableComponent implements   OnInit{
   highlighted: boolean = false;
   data: IProduct[] = products.slice(0, 18);
 
-  constructor(private vidaSaludableDataService: vidaSaludableDataService, config: NgbCarouselConfig, private highlightService: HighlightService) {
+  constructor(private vidaSaludableDataService: vidaSaludableDataService, config: NgbCarouselConfig, private highlightService: HighlightService, private modalService: NgbModal) {
     config.interval = 5000;
     config.wrap = true;
     config.keyboard = true;
     config.showNavigationArrows = true;
   }
   
+  ngOnDestroy(): void {
+    this.openEncuesta(this.modalX);
+  }
    ngOnInit(): void {
 
       this.vidaSaludableDataService.getItemsVidaSaludable().subscribe(
@@ -47,6 +50,9 @@ export class VidaSaludableComponent implements   OnInit{
           this.actividadPrincipal =  data;
       });
   }
-
+  openEncuesta(modal) {
+    this.modalService.open(modal, { size: 'md', centered: true, backdrop: 'static',
+    keyboard: false });
+  }
   
 }

@@ -1,0 +1,40 @@
+<div class="row " style="text-align: center;">
+    <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+        <h1 class="content-header">Reconocimientos</h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col-sm-12 col-sm-12 bg-white pl-3 pt-3 pb-1 mb-3">
+                        <div class="card-body">
+                            <div class="col-12 list" *ngIf="displayMode==='image'">
+                                <div class="row">
+                                    <div *ngFor="let datosinfoReconocimientos of datosInfoReconocimientosAsync" class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                                        <a routerLink="{{adminRoot}}/contenidoReconocimiento" [queryParams]="{id: datosinfoReconocimientos.id}" queryParamsHandling="merge">
+                                            <div *ngIf=datosinfoReconocimientos.estado >
+                                                <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionPopOver}} popoverTitle={{generalPopOver}}
+                                                    placement="top">
+                                                    <a ><img class="card-img-top" src="{{datosinfoReconocimientos.img}}" style="cursor: pointer;"></a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-12" style="text-align: center;">
+                                                            <span class="list-item-heading mb-4 pt-1" style="font-weight: bold">{{datosinfoReconocimientos.subCategoria}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

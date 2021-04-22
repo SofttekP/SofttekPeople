@@ -14,7 +14,7 @@ export class AdministracionConveniosComponent implements OnInit {
   modalOptions: NgbModalOptions = {
     backdrop: "static"
   };
-
+  page =1;
   closeResult: string;
   generalPopOver = 'Ayuda';
   descripcionPopOver = 'Las imagenes deben tener una medida en pixeles entre 180x180 y 380x380, se adminte formatos .jpg';

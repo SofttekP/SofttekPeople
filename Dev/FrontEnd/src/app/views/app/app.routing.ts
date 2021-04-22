@@ -19,6 +19,16 @@ import { AdministracionBeneficiosComponent } from '../../people/administracion-b
 import { AdministrarCarruselEquilibrioVidaComponent } from '../../people/administrar-carrusel-equilibrio-vida/administrar-carrusel-equilibrio-vida.component';
 import { AdministrarInfoEquilibrioVidaComponent } from '../../people/administrar-info-equilibrio-vida/administrar-info-equilibrio-vida.component';
 import { AdministracionEquilibrioDeVidaComponent } from '../../people/administracion-equilibrio-de-vida/administracion-equilibrio-de-vida.component';
+import { ContenidoReconocimientosComponent } from '../../people/contenido-reconocimientos/contenido-reconocimientos.component';
+import { InsigniasComponent } from '../../people/insignias/insignias.component';
+import { InfoReconocimientosComponent } from '../../people/info-reconocimientos/info-reconocimientos.component';
+import { SatisfaccionChartComponent } from '../../people/satisfaccion-chart/satisfaccion-chart.component';
+import { SatisfaccionCommentComponent } from '../../people/satisfaccion-comment/satisfaccion-comment.component';
+import { AdministracionContenidoReconocimientosComponent } from '../../people/administracion-contenido-reconocimientos/administracion-contenido-reconocimientos.component';
+import { AdministracionContenidoInsigniasComponent } from '../../people/administracion-contenido-insignias/administracion-contenido-insignias.component';
+
+
+
 const routes: Routes = [
     {
         path: '', component: AppComponent,
@@ -42,7 +52,14 @@ const routes: Routes = [
             { path: 'adminEquilibrio', component:  AdministracionEquilibrioDeVidaComponent},
             { path: 'prueba', component: CalendarsComponent},
             { path: 'adminInfo', component: AdministrarInfoEquilibrioVidaComponent},
-            { path: 'adminCarrusel', component: AdministrarCarruselEquilibrioVidaComponent}
+            { path: 'adminCarrusel', component: AdministrarCarruselEquilibrioVidaComponent},
+            { path: 'contenidoReconocimiento', component: ContenidoReconocimientosComponent},
+            { path: 'infoInsignias', component: InsigniasComponent},
+            { path: 'infoReco', component: InfoReconocimientosComponent},
+            { path: 'chart', component: SatisfaccionChartComponent},
+            { path: 'comment', component: SatisfaccionCommentComponent},
+            { path: 'adminContentRec', component: AdministracionContenidoReconocimientosComponent},
+            { path: 'adminContentIns', component: AdministracionContenidoInsigniasComponent}
         ]
     }
 ];

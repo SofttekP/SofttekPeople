@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { ViewsModule } from './views/views.module';
@@ -16,14 +16,12 @@ import { VidaSaludableComponent } from './people/equilibrio-vida/equilibrio-vida
 import { BeneficiosComponent } from './people/beneficios/beneficios.component';
 import { ReconocimientosComponent } from './people/reconocimientos/reconocimientos.component';
 import { AdministracionComponent } from './people/administracion/administracion.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { FormsModule } from '@angular/forms'; 
 import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarsComponent } from './people/calendar-eventos/calendar.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AdministracionRolesComponent } from './people/administracion-roles/administracion-roles.component';
 import { AdministracionTiempoParaMiComponent } from './people/administracion-tiempo-para-mi/administracion-tiempo-para-mi.component';
@@ -43,8 +41,29 @@ import { AdministracionReconocimientosComponent } from './people/administracion-
 import { UiSwitchModule } from 'node_modules/ngx-ui-switch';
 import { LightboxModule } from 'ngx-lightbox';
 import { CommonModule } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { PaginationModule} from 'ngx-bootstrap/pagination';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ChartsModule } from 'ng2-charts';
 import { AdministrarCarruselEquilibrioVidaComponent } from './people/administrar-carrusel-equilibrio-vida/administrar-carrusel-equilibrio-vida.component';
 import { AdministrarInfoEquilibrioVidaComponent } from './people/administrar-info-equilibrio-vida/administrar-info-equilibrio-vida.component';
+import { ContenidoReconocimientosComponent } from './people/contenido-reconocimientos/contenido-reconocimientos.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { InsigniasComponent } from './people/insignias/insignias.component';
+import { InfoReconocimientosComponent } from './people/info-reconocimientos/info-reconocimientos.component';
+import { SatisfaccionChartComponent } from './people/satisfaccion-chart/satisfaccion-chart.component';
+import { SatisfaccionCommentComponent } from './people/satisfaccion-comment/satisfaccion-comment.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarsComponent } from './people/calendar/calendar.component';
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+import { AdministracionContenidoReconocimientosComponent } from './people/administracion-contenido-reconocimientos/administracion-contenido-reconocimientos.component';
+import { AdministracionContenidoInsigniasComponent } from './people/administracion-contenido-insignias/administracion-contenido-insignias.component';
+
+registerLocaleData(localeEs);
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -68,16 +87,21 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     NgSelectModule,
     FormsModule,
+    ChartsModule,
+    MatTabsModule,
     CommonModule,
-    //FullCalendarModule,
+    NgxPaginationModule,
+    TooltipModule.forRoot(),
+    PaginationModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     PopoverModule.forRoot(),
     NgbModule,
     IvyCarouselModule,
-    /*CalendarModule.forRoot({
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory
-    })*/
+      useFactory: adapterFactory,
+    }),
   ],
   declarations: [
     AppComponent,
@@ -87,8 +111,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BeneficiosComponent,
     ReconocimientosComponent,
     AdministracionComponent,
-    CalendarsComponent,
-    //CalendarEventosComponent,
     AdministracionRolesComponent,
     AdministracionTiempoParaMiComponent,
     AdministracionPaisesComponent,
@@ -109,13 +131,24 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AdministracionBeneficiosComponent,
     AdministracionReconocimientosComponent,
     AdministrarCarruselEquilibrioVidaComponent,
-    AdministrarInfoEquilibrioVidaComponent
+    AdministrarInfoEquilibrioVidaComponent,
+    ContenidoReconocimientosComponent,
+    InsigniasComponent,
+    InfoReconocimientosComponent,
+    SatisfaccionChartComponent,
+    SatisfaccionCommentComponent,
+    CalendarsComponent,
+    AdministracionContenidoReconocimientosComponent,
+    AdministracionContenidoInsigniasComponent
     
   ],
   exports:[
-    CalendarsComponent
+    
+    NgxPaginationModule,
+    
+    
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

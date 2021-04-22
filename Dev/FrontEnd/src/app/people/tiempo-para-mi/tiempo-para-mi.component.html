@@ -51,3 +51,31 @@
     </div>
 </div>
 
+<ng-template #modalEncuesta let-modal data-backdrop="static" data-keyboard="false">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Queremos tu opinión</h4>
+    </div>
+    <div  class="modal-body">
+        <diV class="row">
+            <p>Te pareció útil la información del módulo <strong>Tiempo para mí</strong></p>
+        </diV>
+        <br>
+        <diV  class="row col-lg-12">
+            <diV class="col-lg-12 col-md-12 col-sm-12">
+                <label>¿Tienes algún comentario o sugerencia que nos ayude a mejorar?</label>
+            </diV>
+            <diV class="col-lg-12 col-md-12 col-sm-12">
+                <textarea></textarea>
+            </diV>
+        </diV>
+    </div>
+    <div class="modal-footer align-items-center h-100 y justify-content-center">
+        <button type="button" class="btn btn-outline-primary" (click)="modal.close('Save click')">
+            <i class="iconsminds-like"></i>
+        </button>
+        <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">
+            <i class="iconsminds-unlike"></i>
+        </button>
+    </div>
+</ng-template>
+

@@ -44,7 +44,7 @@
                                                 <th style="text-align: center;">Estado</th>
                                                 <th style="text-align: center;">Actualizar</th>
                                             </thead>
-                                            <tr *ngFor="let adminCovenio of datosAdministracionConveniosAsync">
+                                            <tr *ngFor="let adminCovenio of datosAdministracionConveniosAsync | paginate: { itemsPerPage: 5, currentPage: page }">
                                                 <td style="padding-top: 50px;">{{adminCovenio.name}}</td>
                                                 <td style="text-align: center;"><img src ="{{adminCovenio.img}}" style="width: 25%" (click)="openLightbox(adminCovenio.img)"> </td>
                                                 <td style="text-align: center; padding-top: 50px;">Inactivo <ui-switch class="ml-1" [checked]="adminCovenio.estado"></ui-switch> Activo</td>
@@ -54,7 +54,11 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
+                        <div class="card d-flex flex-row pl-3 pt-3 pb-2 mb-3 card col-xl-12 col-lg-12 col-md-12 col-12 col-sm-12 align-items-center h-100 y justify-content-center" >
+                            <pagination-controls (pageChange)="page = $event" previousLabel="Anteriror" nextLabel="Siguiente"></pagination-controls>
+                          </div>
                     </div>
                 </div>
             </div>

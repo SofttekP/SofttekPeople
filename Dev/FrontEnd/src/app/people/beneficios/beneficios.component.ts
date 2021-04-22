@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, } from 'rxjs';
 import { delay, filter } from 'rxjs/operators';
 import { BeneficiosDataService, Beneficios } from './beneficios.data.service';
@@ -9,14 +10,18 @@ import { BeneficiosDataService, Beneficios } from './beneficios.data.service';
   styleUrls: ['./beneficios.component.scss']
 })
 export class BeneficiosComponent implements OnInit {
-
-  constructor(private beneficiosDataService: BeneficiosDataService) { }
+  @ViewChild('modalEncuesta', {static: false}) modalX: any;
+  
+  constructor(private beneficiosDataService: BeneficiosDataService, private modalService: NgbModal) { }
   verContenido: boolean = false;
   urlImage: string = '';
   tituloBeneficio: string = "";
   beneficiosAsync: any;
   idBeneficio = '0';
  
+  ngOnDestroy(): void {
+    this.openEncuesta(this.modalX);
+  }
 
 
   ngOnInit(): void {
@@ -39,6 +44,9 @@ export class BeneficiosComponent implements OnInit {
     }
   }
 
-  
+  openEncuesta(modal) {
+    this.modalService.open(modal, { size: 'md', centered: true, backdrop: 'static',
+    keyboard: false });
+  }
 
 }

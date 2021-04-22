@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalGeneralComponent } from './modal-general';
@@ -7,16 +7,14 @@ import { NgbModal, NgbModalOptions, ModalDismissReasons } from '@ng-bootstrap/ng
 import products from 'src/app/data/products';
 import { IProduct } from 'src/app/data/api.service';
 
-
-
-
 @Component({
   selector: 'app-tiempo-para-mi',
   templateUrl: './tiempo-para-mi.component.html',
   styleUrls: ['./tiempo-para-mi.component.scss']
 })
-export class TiempoParaMiComponent implements OnInit {
-
+export class TiempoParaMiComponent implements OnInit, OnDestroy {
+  @ViewChild('modalEncuesta', {static: false}) modalX: any;
+  
   modalOptions: NgbModalOptions = {
     backdrop: "static"
   };
@@ -29,6 +27,12 @@ export class TiempoParaMiComponent implements OnInit {
   bsModalRef: BsModalRef;
   
   constructor( private translateService: TranslateService, private tiempoDatService: TiempoParaMiDataService, private modalService: NgbModal) { }
+  
+  ngOnDestroy(): void {
+    this.openEncuesta(this.modalX);
+  }
+
+
   data: IProduct[] = products.slice(0, 18);
   ngOnInit(): void {
 
@@ -38,6 +42,9 @@ export class TiempoParaMiComponent implements OnInit {
     });
 
   }
+
+
+ 
   
   abierto(content) {
 
@@ -60,6 +67,12 @@ export class TiempoParaMiComponent implements OnInit {
 
   abrirModal(contentModal) {
     this.abierto(contentModal);
+}
+
+
+openEncuesta(modal) {
+  this.modalService.open(modal, { size: 'md', centered: true, backdrop: 'static',
+  keyboard: false });
 }
 
 }

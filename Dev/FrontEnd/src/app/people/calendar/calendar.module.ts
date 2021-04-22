@@ -1,30 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { FormsModule } from '@angular/forms';
-import { NgbModalModule, NgbDatepickerModule, NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarModule, DateAdapter, CalendarDateFormatter} from 'angular-calendar';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { CalendarRoutingModule } from "./calendar-routing.module";
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { CalendarsComponent } from "./calendar.component";
-import { DateTimePickerComponent } from './date-time-picker.component';
+
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 @NgModule({
     imports: [
-        CommonModule,
-        CalendarRoutingModule,
-        CalendarModule.forRoot({
-            provide: DateAdapter,
-            useFactory: adapterFactory
-          }),
-        NgbModalModule,
-        NgbDatepickerModule,
-        NgbTimepickerModule,
-        FormsModule
+    CommonModule,
+    FormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
     ],
-    declarations: [
-        CalendarsComponent,
-        DateTimePickerComponent
+    declarations: [   
+    ],
+    exports:[
+      
     ]
 })
 export class CalendarsModule { }

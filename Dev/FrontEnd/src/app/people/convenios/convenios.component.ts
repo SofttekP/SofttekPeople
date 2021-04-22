@@ -12,14 +12,17 @@ import { Lightbox } from 'ngx-lightbox';
   styleUrls: ['./convenios.component.scss']
 })
 export class ConveniosComponent implements OnInit {
-
+  
+  @ViewChild('modalEncuesta', {static: false}) modalX: any;
   datosConveniosAsync : any;
-
+  page =1;
 
 
   constructor( private translateService: TranslateService, private conveniosDatService: ConveniosDataService, private modalService: NgbModal,private lightbox: Lightbox) { }
   orders: IOrder[] = orderData;
-
+  ngOnDestroy(): void {
+    this.openEncuesta(this.modalX);
+  }
   ngOnInit(): void {
     this.conveniosDatService.getConvenios().subscribe(
       data => {
@@ -29,5 +32,10 @@ export class ConveniosComponent implements OnInit {
 
   openLightbox(src: string): void {
     this.lightbox.open([{ src, thumb: '' }], 0, { centerVertically: true, positionFromTop: 0, disableScrolling: true, wrapAround: true });
+  }
+
+  openEncuesta(modal) {
+    this.modalService.open(modal, { size: 'md', centered: true, backdrop: 'static',
+    keyboard: false });
   }
 }
