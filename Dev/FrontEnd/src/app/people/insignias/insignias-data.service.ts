@@ -24,7 +24,7 @@ export class InsigniasDataService {
     {
       id: '1',
       subCategoria: '#BeKind',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/ITSYOU400.png',
       descripcion: 'Por crear y mantener un ambiente adecuado a través de tu trato hacia mí y otros Softtekians',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -36,7 +36,7 @@ export class InsigniasDataService {
     {
       id: '2',
       subCategoria: '#BeCollaborative',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/FAMILYT400.png',
       descripcion: 'Por tu valiosa y continua colaboración. (En la descripción se puede especificar el detalle.',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -48,7 +48,7 @@ export class InsigniasDataService {
     {
       id: '3',
       subCategoria: '#BeATechGeek',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/JUST MA 400.png',
       descripcion: 'Porque con tu expertis y mindset tecnológico mantienes vivo nuestro propósito: generar valor a través del uso de la tecnología. ',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -60,7 +60,7 @@ export class InsigniasDataService {
     {
       id: '4',
       subCategoria: '#BeAgil',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/EMERGE400.png',
       descripcion: 'Por tu proactividad y flexibilidad sin perder de vista el propósito, haces la diferencia. ',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -72,7 +72,7 @@ export class InsigniasDataService {
     {
       id: '5',  
       subCategoria: '#BeTrustsworthy',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/BREA400.png',
       descripcion: 'Por cumplir cabalmente lo que prometes, incrementas mi confianza en ti',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',

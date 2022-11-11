@@ -38,7 +38,7 @@ export class adminCarrusellDataService {
     },
     {
       id: '3',
-      name: 'Educaciòn',
+      name: 'Educación',
       img: '/assets/img/carousels/3.jpg',
       link :'',
       estado: true,
@@ -46,7 +46,7 @@ export class adminCarrusellDataService {
     },
     {
       id: '4',
-      name: 'Bono dotaciòn',
+      name: 'Bono dotación',
       img: '/assets/img/carousels/4.jpg',
       link :'',
       estado: false,

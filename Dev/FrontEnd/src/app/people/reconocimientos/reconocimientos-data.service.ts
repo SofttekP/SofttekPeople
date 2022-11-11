@@ -21,7 +21,7 @@ export class ReconocimientosDataService {
     {
       id: '1',
       subCategoria: '#BeKind',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/ITSYOU400.png',
       descripcion: 'Por crear y mantener un ambiente adecuado a través de tu trato hacia mí y otros Softtekians',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -30,7 +30,7 @@ export class ReconocimientosDataService {
     {
       id: '2',
       subCategoria: '#BeCollaborative',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/FAMILYT400.png',
       descripcion: 'Por tu valiosa y continua colaboración. (En la descripción se puede especificar el detalle.',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -39,7 +39,7 @@ export class ReconocimientosDataService {
     {
       id: '3',
       subCategoria: '#BeATechGeek',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/JUST MA 400.png',
       descripcion: 'Porque con tu expertis y mindset tecnológico mantienes vivo nuestro propósito: generar valor a través del uso de la tecnología. ',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -48,7 +48,7 @@ export class ReconocimientosDataService {
     {
       id: '4',
       subCategoria: '#BeAgil',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/EMERGE400.png',
       descripcion: 'Por tu proactividad y flexibilidad sin perder de vista el propósito, haces la diferencia. ',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -57,7 +57,7 @@ export class ReconocimientosDataService {
     {
       id: '5',  
       subCategoria: '#BeTrustsworthy',
-      tituloCategoria: 'Inofrmación',
+      tituloCategoria: 'Información',
       img: '/assets/img/TiempoParaMi/BREA400.png',
       descripcion: 'Por cumplir cabalmente lo que prometes, incrementas mi confianza en ti',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -66,7 +66,7 @@ export class ReconocimientosDataService {
     {
         id: '6',  
         subCategoria: 'VOM',
-        tituloCategoria: 'Inofrmación',
+        tituloCategoria: 'Información',
         img: '/assets/img/TiempoParaMi/BREA400.png',
         descripcion: 'Reconocimiento del líder a un Softtekian de su equipo, por su excelente desempeño y estacado comportamiento que generan un impacto positivo en los resultados, la calidad y la mejora en los procesos. ',
         link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -75,16 +75,16 @@ export class ReconocimientosDataService {
     {
     id: '7',  
     subCategoria: 'VOC',
-    tituloCategoria: 'Inofrmación',
+    tituloCategoria: 'Información',
     img: '/assets/img/TiempoParaMi/BREA400.png',
-    descripcion: 'Es el reconocimiento o agradecimiento directo de los clientes externos o internos por acciones sobresalientes que superan las expectativas en el servicio',
+    descripcion: 'Es el reconocimiento o agradecimiento directo de los clientes externos o internos por acciones sobresalientes que superan las expectativas en el servicio.',
     link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
     condiciones: ''
     },
     {
         id: '8',  
         subCategoria: 'COLABORACIÓN',
-        tituloCategoria: 'Inofrmación',
+        tituloCategoria: 'Información',
         img: '/assets/img/TiempoParaMi/BREA400.png',
         descripcion: 'Reconocimiento que se otorga a los equipos de trabajo de diferentes áreas o prácticas que afrontaron con eficacia retos que significaron crecimiento al negocio.',
         link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -93,7 +93,7 @@ export class ReconocimientosDataService {
     {
         id: '9',  
         subCategoria: 'BE BOLD',
-        tituloCategoria: 'Inofrmación',
+        tituloCategoria: 'Información',
         img: '/assets/img/TiempoParaMi/BREA400.png',
         descripcion: 'Es un agradecimiento de Softtekian a Softtekian por acciones cotidianas que están alienadas a la plataforma cultural.',
         link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
@@ -102,9 +102,9 @@ export class ReconocimientosDataService {
     {
         id: '10',  
         subCategoria: 'LEAVE A MARK',
-        tituloCategoria: 'Inofrmación',
+        tituloCategoria: 'Información',
         img: '/assets/img/TiempoParaMi/BREA400.png',
-        descripcion: 'Reconocer aquellas personas que por su accionar diario dejan una marca / huella en su cliente, práctica, sede y en la organización',
+        descripcion: 'Reconocer aquellas personas que por su accionar diario dejan una marca / huella en su cliente, práctica, sede y en la organización.',
         link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
         condiciones: ''
     }

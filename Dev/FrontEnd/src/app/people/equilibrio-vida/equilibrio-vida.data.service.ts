@@ -53,13 +53,13 @@ export class vidaSaludableDataService {
     },
     {
       id: '5a15b13c663ea0af9ad0dae8',
-      name: 'Educaciòn',
+      name: 'Educación',
       img: '/assets/img/carousels/3.jpg',
       link :''
     },
     {
       id: '5a15b13cc9eeb36511d65acf',
-      name: 'Bono dotaciòn',
+      name: 'Bono dotación',
       img: '/assets/img/carousels/4.jpg',
       link :''
     }
@@ -82,7 +82,7 @@ export class vidaSaludableDataService {
       img: '/assets/img/products/marble-cake-thumb.jpg',
       category: 'Salud',
       date: '01.03.2021',
-      status: 'PROXIMAMENTE',
+      status: 'PRÓXIMAMENTE',
       statusColor: 'warning',
       description: 'Conoce las actividades del dia de la salud'
     },

@@ -19,9 +19,12 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
 
+  
+
+
 
   onSubmit(): void {
-    if ( this.buttonDisabled) {
+    if (!this.buttonDisabled) {
       this.router.navigate([environment.adminRoot]);
       return;
     }

@@ -15,7 +15,7 @@ export interface IMenuItem {
 const data: IMenuItem[] = [
   {
     icon: 'iconsminds-sand-watch-2',
-    label: 'Tiempo para mi',
+    label: 'Tiempo para mí',
     to: `${adminRoot}/tiempo`,
     roles: [UserRole.Admin, UserRole.Editor]
   },

@@ -19,7 +19,7 @@ export class SatisfaccionChartComponent implements OnInit {
   ];
 
   chartLabels = [
-    'Tiempo para mi',
+    'Tiempo para mí',
     'Convenios',
     'Equilibrio de vida',
     'Beneficios',

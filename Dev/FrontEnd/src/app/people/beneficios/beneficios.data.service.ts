@@ -31,12 +31,12 @@ export class BeneficiosDataService {
     },
     {
       id: '5a15b13c663ea0af9ad0dae8',
-      name: 'Educaciòn',
+      name: 'Educación',
       img: '/assets/img/beneficios/educacion.png'
     },
     {
       id: '5a15b13cc9eeb36511d65acf',
-      name: 'Bono dotaciòn',
+      name: 'Bono dotación',
       img: '/assets/img/beneficios/dotacion.jpg'
     }
     

@@ -1,3 +1,11 @@
+<nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+    <ol class="breadcrumb pt-0">
+        <li class="breadcrumb-item" *ngFor="let sub of pathArr; let i=index" [hidden]="i >= (pathArr.length-1)">
+            <a [routerLink]="[getUrl(sub)]">{{getLabel(getUrl(sub)) | translate}}</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{ title || (getLabel('/'+path) | translate) }}</li>
+    </ol>
+</nav>
 <div class="row " style="text-align: center;">
     <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
         <h1 class="content-header">Administración convenios</h1>

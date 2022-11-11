@@ -1,6 +1,15 @@
+
+<nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+    <ol class="breadcrumb pt-0">
+        <li class="breadcrumb-item" *ngFor="let sub of pathArr; let i=index" [hidden]="i >= (pathArr.length-1)">
+            <a [routerLink]="[getUrl(sub)]">{{getLabel(getUrl(sub)) | translate}}</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{ title || (getLabel('/'+path) | translate) }}</li>
+    </ol>
+</nav>
 <div class="row " style="text-align: center;">
     <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
-        <h1 class="content-header">Tiempo para mi</h1>
+        <h1 class="content-header">Tiempo para mí</h1>
     </div>
 </div>
 <div class="container-fluid">
@@ -57,7 +66,7 @@
     </div>
     <div  class="modal-body">
         <diV class="row">
-            <p>Te pareció útil la información del módulo <strong>Tiempo para mí</strong></p>
+            <p>¿Te pareció útil la información del módulo <strong>Tiempo para mí</strong>?</p>
         </diV>
         <br>
         <diV  class="row col-lg-12">
@@ -70,10 +79,12 @@
         </diV>
     </div>
     <div class="modal-footer align-items-center h-100 y justify-content-center">
-        <button type="button" class="btn btn-outline-primary" (click)="modal.close('Save click')">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')"style="
+        font-size: 20px;">
             <i class="iconsminds-like"></i>
         </button>
-        <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">
+        <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')" style="
+        font-size: 20px;">
             <i class="iconsminds-unlike"></i>
         </button>
     </div>

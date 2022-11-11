@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, Input} from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, Input, OnInit} from '@angular/core';
 import { startOfDay,  subDays, addDays, endOfMonth, isSameDay, isSameMonth } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -28,14 +28,23 @@ const colors: any = {
   styleUrls: ['./calendar.component.scss']
 })
 
-export class CalendarsComponent {
+export class CalendarsComponent implements OnInit{
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   @Input()
   view: CalendarView = CalendarView.Month;
   ngSwitch: string;
   CalendarView = CalendarView;
-
+  fechaInicial= new Date("2021-04-20T05:00:00.000Z");
+  fechaFinal= new Date("2021-04-29T05:00:00.000Z");
   viewDate: Date = new Date();
+
+  nuevoEvento: CalendarEvent = {
+    start: this.fechaInicial,
+      end: this.fechaFinal,
+      title: 'Evento de Prueba',
+      color: colors.verde,
+      allDay: true,
+  }
 
   modalData: {
     action: string;
@@ -46,8 +55,8 @@ export class CalendarsComponent {
 
   events: CalendarEvent[] = [
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
+      start: this.fechaInicial,
+      end: this.fechaFinal,
       title: 'Evento del día',
       color: colors.verde,
       allDay: true,
@@ -82,6 +91,10 @@ export class CalendarsComponent {
       }
       this.viewDate = date;
     }
+  }
+
+  ngOnInit(): void {
+    this.events.push(this.nuevoEvento);
   }
 
   eventTimesChanged({

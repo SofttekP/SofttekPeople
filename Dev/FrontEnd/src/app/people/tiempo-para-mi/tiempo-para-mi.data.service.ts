@@ -24,7 +24,7 @@ export class TiempoParaMiDataService {
       subCategoria: 'Happy Birth-Day',
       tituloCategoria: 'Como solicitar tu día de cumpleaños',
       img: '/assets/img/TiempoParaMi/ITSYOU400.png',
-      descripcion: 'Descansa y disfruta junto a tus seres queridos en tu día de cumpleaños.*Si es fin de semana o festivo aplica al día laboral anterior o siguiente a la fecha*',
+      descripcion: 'Descansa y disfruta junto a tus seres queridos en tu día de cumpleaños.*Si es fin de semana o festivo aplica al día laboral anterior o siguiente a la fecha*.',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',
       estado: true,
       icon: 'simple-icon-pencil'
@@ -42,7 +42,7 @@ export class TiempoParaMiDataService {
     {
       id: '3',
       subCategoria: 'Weeding Time',
-      tituloCategoria: '¿Sabes cómo solicitar el día para tu boda?',
+      tituloCategoria: 'Como solicitar el día para tu boda',
       img: '/assets/img/TiempoParaMi/JUST MA 400.png',
       descripcion: '¡Celebramos contigo! Por esta razón te brindamos 3 días libres para compartir con tu pareja después de su boda. ',
       link:'https://onesofttek.sharepoint.com/sites/SKMssh/colombia/ops/ars/Autogestion/Paginas/CertificadoLaboral.aspx#',

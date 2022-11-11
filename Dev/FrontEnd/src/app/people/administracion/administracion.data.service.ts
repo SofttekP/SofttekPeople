@@ -31,7 +31,7 @@ export class AdministracionDataService {
       url:'app/adminPaises'
     },
     {
-      title: 'Tiempo para mi ', 
+      title: 'Tiempo para mí ', 
       icon: 'iconsminds-sand-watch-2', 
       generalPopOver :'Administrar Contenido', 
       descripcionPopOver:'Acá puesdes gestionar (imagenes, texto y links)', 

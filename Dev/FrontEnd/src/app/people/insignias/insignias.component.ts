@@ -17,10 +17,10 @@ export class InsigniasComponent implements OnInit {
   verInformacion = "simple-icon-question";
   descripcionPopOver="Un reconocimiento que le das a otro softtekian por sus acciones destacadas";
   generalPopOver="¿Qué es una insignia? ";
-  descripcionIPopOver="de Softtekian a Softtekian";
+  descripcionIPopOver="De Softtekian a Softtekian";
   generalIPopOver="¿A quién le puedes otorgar una insignia?";
   descripcionCPopOver="Da clic en el video para conocer toda la información";
-  generalCPopOver="¿cómo otorgar una insignia?";
+  generalCPopOver="¿Cómo otorgar una insignia?";
 
   datosinsigniasAsync : any;
   page =1;
