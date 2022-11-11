@@ -6,7 +6,7 @@ import { delay, map } from 'rxjs/operators';
 export interface Beneficios {
   id: string;
   name: string;
-  
+  img: string;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -16,23 +16,28 @@ export class BeneficiosDataService {
   private _beneficios = [
     {
         id: '0',
-        name: 'Selecciona'
+        name: 'Selecciona',
+        img: ''
       },
     {
       id: '5a15b13c36e7a7f00cf0d7cb',
-      name: 'Salud'
+      name: 'Salud',
+      img: '/assets/img/beneficios/salud.jpg'
     },
     {
       id: '5a15b13c2340978ec3d2c0ea',
-      name: 'Vivienda'
+      name: 'Vivienda',
+      img: '/assets/img/beneficios/vivienda.jpg'
     },
     {
       id: '5a15b13c663ea0af9ad0dae8',
-      name: 'Educaciòn'
+      name: 'Educación',
+      img: '/assets/img/beneficios/educacion.png'
     },
     {
       id: '5a15b13cc9eeb36511d65acf',
-      name: 'Bono dotaciòn'
+      name: 'Bono dotación',
+      img: '/assets/img/beneficios/dotacion.jpg'
     }
     
   ];

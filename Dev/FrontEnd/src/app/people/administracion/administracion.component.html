@@ -1,1 +1,50 @@
-<p>administracion works!</p>
+<nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+    <ol class="breadcrumb pt-0">
+        <li class="breadcrumb-item" *ngFor="let sub of pathArr; let i=index" [hidden]="i >= (pathArr.length-1)">
+            <a [routerLink]="[getUrl(sub)]">{{getLabel(getUrl(sub)) | translate}}</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{ title || (getLabel('/'+path) | translate) }}</li>
+    </ol>
+</nav>
+<div class="row " style="text-align: center;">
+    <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+        <h1 class="content-header">Administración</h1>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row ">
+        <div class="col-sm-12">
+            <div class="col-sm-12 col-sm-12 pl-3 pt-3 pb-1 mb-3">
+                <div class="col-12">
+                    <div class="row">
+                        <div *ngFor="let admin of datosAdministracionAsync" class="col-xl-4 col-lg-4 col-md-4 col-12 col-sm-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="position-relative" triggers="mouseenter:mouseleave" popover={{admin.descripcionPopOver}} popoverTitle={{admin.generalPopOver}}
+                                            placement="top" style="cursor: pointer;">
+                                        <a href="{{admin.url}}">
+                                            <div class="card-body" id="pulse">
+                                                <div class="icon-row-item" >
+                                                    <div class="col-12">
+                                                        <div class="text-center">
+                                                            <span style="font-size: 50px;" [class]="admin.icon"></span>
+                                                        </div>
+                                                        <div class=" text-center">
+                                                            <span class="card-text font-weight-semibold mb-0" style="font-weight: bold">{{admin.title}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,164 @@
+<div class="row " style="text-align: center;">
+    <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+        <h1 class="content-header">Administración contenido carrusel Equilibrio de vida</h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-sm-12">
+            <div class="col-sm-12 col-sm-12 pl-3 pt-3 pb-1 mb-3">
+                <div class="col-12">
+                    <div class="row align-items-center h-100 justify-content-center" >
+                        <div class="card col-xl-4 col-lg-4 col-md-4 col-12 col-sm-12 mb-4" style="cursor: pointer;" (click)="abrirModal(mensajeModalAgregarCarrusel)">
+                            <div class="card-header">
+                                <div class="card-body" id="pulse">
+                                    <div class="col-12">
+                                        <div class="text-center">
+                                            <span style="font-size: 50px;" [class]=iconoAgregar></span>
+                                        </div>
+                                        <div class=" text-center">
+                                            <span class="card-text font-weight-semibold mb-0" style="font-weight: bold">Agregar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-sm-12">
+            <div class="col-sm-12 col-sm-12 pl-3 pt-3 pb-1 mb-3">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="card col-xl-12 col-lg-12 col-md-12 col-12 col-sm-12 mb-4">
+                            <div class="card-header">
+                                <div class="card-body">
+                                    <div style="display: block; overflow-x: auto; white-space:nowrap;">
+                                        <table class="table">
+                                            <thead>
+                                                <th>Texto</th>
+                                                <th style="text-align: center;">Imagen</th>
+                                                <th style="text-align: center;">Estado</th>
+                                                <th style="text-align: center;">Actualizar</th>
+                                            </thead>
+                                            <tr *ngFor="let adminCarrusel of datosAdministracionCarruselAsync">
+                                                <td style="padding-top: 50px;">{{adminCarrusel.name}}</td>
+                                                <td style="text-align: center;"><img src ="{{adminCarrusel.img}}" style="width: 25%" (click)="openLightbox(adminCarrusel.img)"> </td>
+                                                <td style="text-align: center; padding-top: 50px;">Inactivo <ui-switch class="ml-1" [checked]="adminCarrusel.estado"></ui-switch> Activo</td>
+                                                <td style="text-align: center; padding-top: 50px;"><span [class]="adminCarrusel.icon" style="cursor: pointer;" (click)="abrirUpdate(mensajeModalActualizar,adminCarrusel.id)"></span></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ <ng-template #mensajeModalAgregarCarrusel let-modal data-backdrop="static" data-keyboard="true">
+    <div class="modal-header col-xl-12 col-lg-12 col-md-12 col-12 col-sm-6">
+            <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionPopOver}} popoverTitle={{generalPopOver}} placement="top">
+                <span style="font-size: 20px;" [class]=iconoAyuda></span>
+                <h4 class="modal-title pull-left">Agregar contenido en Carrusel </h4>
+            </div>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modal.close('Save click')"><span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div  class="modal-body">
+        <div class="row align-items-center h-100 justify-content-center"> 
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12 col-sm-6">
+            <label class="form-group has-top-label">
+                <input class="form-control" required name="texto" type="text" [(ngModel)]="agregarCarrusel.name" (ngModelChange)="validarCreacionTitulo();validarCreacion()"/>
+                <span>Texto</span>
+                <div [hidden]="texto" class="invalid-tooltip">Este campo es requerido</div>
+            </label>
+        </div>
+        </div>
+        <div class="row align-items-center h-100 justify-content-center">
+            <label>Imagen</label>
+        </div>
+        <div class="row align-items-center h-100 justify-content-center">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12 col-sm-6">
+                <input  required name="file" type="file" [(ngModel)]="agregarCarrusel.img" (ngModelChange)="validarCreacionImg();validarCreacion()"/>
+                <div [hidden]="img" class="invalid-tooltip">Este campo es requerido</div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger"  (click)="modal.close('Save click');cancelar()">Cancelar</button>
+            <button class="btn btn-primary"  [disabled]="buttonDisabled" (click)="AgregarConvenio(mensajeModalConfirmacionCreacion)" >Agregar</button>
+        </div>
+    </div>
+</ng-template>
+<ng-template #mensajeModalActualizar let-modal data-backdrop="static" data-keyboard="true">
+    <div class="modal-header col-xl-12 col-lg-12 col-md-12 col-12 col-sm-6">
+        <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionPopOver}} popoverTitle={{generalPopOver}} placement="top">
+            <span style="font-size: 20px;" [class]=iconoAyuda></span>
+            <h4 class="modal-title pull-left">Actualizar contenido en Carrusel </h4>
+        </div>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modal.close('Save click')"><span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div  class="modal-body">
+    <div class="row align-items-center h-100 justify-content-center"> 
+        <div class="col-xl-8 col-lg-8 col-md-8 col-12 col-sm-6">
+        <label class="form-group has-top-label">
+            <input class="form-control" required name="texto" type="text" [(ngModel)]="ActualizarCarrusel.name" (ngModelChange)="validarCreacionTitulo();validarCreacion()"/>
+            <span>Texto</span>
+            <div [hidden]="texto" class="invalid-tooltip">Este campo es requerido</div>
+        </label>
+    </div>
+    </div>
+    <div class="row align-items-center h-100 justify-content-center"> 
+        <div class="col-xl-8 col-lg-8 col-md-8 col-12 col-sm-6">
+            <label>Imagen Actual: &nbsp;&nbsp;</label>
+            <img src ="{{ActualizarCarrusel.img}}" style="width: 25%" >
+        </div>
+    </div>
+    <div class="row align-items-center h-100 justify-content-center">
+        <label>Imagen</label>
+    </div>
+    <div class="row align-items-center h-100 justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-12 col-sm-6">
+            <input  required name="file" type="file" [(ngModel)]="ActualizarCarrusel.img" (ngModelChange)="validarCreacionImg();validarCreacion()"/>
+            <div [hidden]="img" class="invalid-tooltip">Este campo es requerido</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger"  (click)="modal.close('Save click');cancelar()">Cancelar</button>
+        <button class="btn btn-primary"  [disabled]="buttonDisabled" (click)="AgregarConvenio(mensajeModalConfirmacionCreacion)" >Agregar</button>
+    </div>
+</div>
+</ng-template>
+<!--<ng-template #mensajeModalConfirmacionCreacion let-modal data-backdrop="static" data-keyboard="true">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Confirmación</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modal.close('Save click')"><span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div  class="modal-body">
+        ¿Estas seguro de crear este país?.
+    </div>
+    <div class="modal-footer">
+        
+    </div>
+</ng-template>
+
+<ng-template #mensajeModalConfirmacionActualizacion let-modal data-backdrop="static" data-keyboard="true">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Confirmación</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modal.close('Save click')"><span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div  class="modal-body">
+        ¿Estas seguro de actaulizar este país?.
+    </div>
+    <div class="modal-footer">
+        
+    </div>
+</ng-template>-->

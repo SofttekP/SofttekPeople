@@ -1,0 +1,94 @@
+<div class="row "style="text-align: center;">
+    <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+        <h1 class="content-header">Insignias</h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-sm-12">
+            <div class="col-sm-12 col-sm-12 pl-3 pt-3 pb-1 mb-3">
+                <div class="col-12">
+                    <div class="row  align-items-center h-100 justify-content-center" >
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-12 col-sm-6">
+                            <div class="card-header">
+                                <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionPopOver}} popoverTitle={{generalPopOver}}
+                                        placement="top" style="cursor: pointer;">
+                                    <div class="card-body" id="pulse">
+                                        <div class="icon-row-item" >
+                                            <div class="col-12">
+                                                <div class="text-center">
+                                                    <span style="font-size: 35px;" [class]="verComo"></span>
+                                                </div>
+                                                <div class=" text-center">
+                                                    <span class="card-text font-weight-semibold mb-0" style="font-weight: bold">¿Qué es una insignia?</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-12 col-sm-6">
+                            <div class="card-header">
+                                <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionIPopOver}} popoverTitle={{generalIPopOver}}
+                                    placement="top" style="cursor: pointer;">
+                                    <div class="card-body" id="pulse">
+                                        <div class="icon-row-item" >
+                                            <div class="col-12">
+                                                <div class="text-center">
+                                                    <span style="font-size: 35px;" [class]="verInformacion"></span>
+                                                </div>
+                                                <div class=" text-center">
+                                                    <span class="card-text font-weight-semibold mb-0" style="font-weight: bold">¿A quién le puedes otorgar una insignia?</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-12 col-sm-6">
+                            <div class="card-header">
+                                <div class="position-relative" triggers="mouseenter:mouseleave" popover={{descripcionCPopOver}} popoverTitle={{generalCPopOver}}
+                                    placement="top" style="cursor: pointer;">
+                                    <div class="card-body" id="pulse">
+                                        <div class="icon-row-item" >
+                                            <div class="col-12">
+                                                <div class="text-center">
+                                                    <span style="font-size: 35px;" [class]="verOtorgar"></span>
+                                                </div>
+                                                <div class=" text-center">
+                                                    <span class="card-text font-weight-semibold mb-0" style="font-weight: bold">¿Cómo otorgar una insignia?</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row "style="text-align: center;">
+    <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+        <h1 class="content-header">Nuestras insignias</h1>
+    </div>
+</div>
+<div class="card d-flex flex-row mb-3 card col-xl-12 col-lg-12 col-md-12 col-12 col-sm-12" *ngFor="let insignias of datosinsigniasAsync | paginate: { itemsPerPage: 5, currentPage: page }">
+    <div class="d-flex flex-grow-1 min-width-zero">
+      <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+        <img src ="{{insignias.img}}" style="width: 7%" (click)="openLightbox(insignias.img)">
+        <a href="{{insignias.link}}" class="list-item-heading mb-1">{{insignias.subCategoria}}</a>
+        <p class="mb-1 text-muted text-small ">{{insignias.descripcion}}</p>
+        <div class="w-15 w-xs-100 text-right">
+          <span [class]="'badge badge-pill badge-'+insignias.statusColor">{{insignias.categoria}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="card d-flex flex-row pl-3 pt-3 pb-2 mb-3 card col-xl-12 col-lg-12 col-md-12 col-12 col-sm-12 align-items-center h-100 y justify-content-center" >
+      <pagination-controls (pageChange)="page = $event" previousLabel="Anteriror" nextLabel="Siguiente"></pagination-controls>
+    </div>

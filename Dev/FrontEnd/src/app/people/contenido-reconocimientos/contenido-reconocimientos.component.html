@@ -1,0 +1,45 @@
+<div class="row col-12">
+  <div class="col-sm-8 col-lg-8 col-xl-8 col-12 mb-3">
+    <div *ngFor="let item of datosContenidoReconocimientoidAsync">
+      <div class="row" style="text-align: center;">
+        <div class="col-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+          <h1 class="content-header">{{item.subCategoria}}</h1>
+        </div>
+      </div>
+      <div class="card">
+        <div class="position-relative">
+          <a routerLink="#"><img  class="card-img-top" [src]="item.img" alt="Card image cap" style="border-radius: .75rem;  max-width: 100%; height: auto;"></a>
+        </div>
+        <div class="card-body">
+          <h2 class="mb-3 ">{{item.tituloCategoria}}</h2>
+          <p class="mb-3 ">{{item.descripcion}}</p>
+          <footer>
+              <p class="mb-3">{{item.condiciones}}</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-lg-4 col-xl-4 col-12 mb-3">
+    <div class="row" style="text-align: center;">
+      <div class="col-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+        <h1 class="content-header">Reconocidos</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let colaborador of datosColaborador" class="col-sm-4 col-lg-6 col-xl-6 col-md-6 col-12 mb-3">
+        <div class="card">
+          <div class="position-relative">
+            <img  class="card-img-top" [src]="colaborador.img" alt="Card image cap" >
+          </div>
+          <div class="card-body">
+            <p class="mb-3"> {{colaborador.nombre}}</p>
+            <footer>
+              <p class="text-muted text-small mb-0 font-weight-light">{{colaborador.fecha}}</p>
+          </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

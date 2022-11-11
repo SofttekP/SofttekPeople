@@ -6,11 +6,11 @@ import { UserRole } from '../app/shared/auth.roles';
 
 export const environment = {
   production: false,
-  buyUrl : 'https://1.envato.market/6NV1b',
+  
   SCARF_ANALYTICS : false,
   adminRoot: '/app',
   apiUrl: 'https://api.coloredstrategies.com',
-  defaultMenuType: 'menu-default',
+  defaultMenuType: 'menu-sub-hidden',
   subHiddenBreakpoint: 1440,
   menuHiddenBreakpoint: 768,
   themeColorStorageKey: 'vien-themecolor',

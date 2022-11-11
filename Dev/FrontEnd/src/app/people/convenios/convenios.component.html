@@ -1,55 +1,50 @@
-<div class="row " align="center">
-    <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
-        <h1 class="content-header">Convenios</h1>
-    </div>
+<div class="row " style="text-align: center;">
+  <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
+      <h1 class="content-header">Convenios</h1>
+  </div>
 </div>
-<div class="container-fluid">
-    <div class="row text-center">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <div class="col-sm-12 col-sm-12 bg-white pl-3 pt-3 pb-1 mb-3">
-                        <div class="card-body">
-                            <div class="col-12 list">
-                                <div class="row" >
-                                    <div class="col-sm-4">
-                                        <label style="font-weight: bold">Seleccione un convenio</label>
-                                        <select type="text" class="form-control" (change)="visualizarInfoConvenio($event.target.value)">
-                                            <option selected [value]="0">Seleccione</option>
-                                            <option  *ngFor="let convenios of listaConvenios" [value]="1">{{convenios}}</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-sm-12 bg-white pl-3 pt-3 pb-1 mb-3" [hidden]="infoConvenios">
-                        <div class="card-body">
-                            <div class="col-12 list">
-                                <div class="row" >
-                                    <div class="col-sm-12 bg-white pl-3 pt-3 pb-2 mb-3" >
-                                        <h2 class="content-header">{{listaConvenios[0]}}</h2>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 " >
-                                    <div class="position-relative">
-                                        <a ><img class="card-img-top" src="{{imgConvReactivacion}}"></a>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12" >
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="card d-flex flex-row mb-3 card col-xl-12 col-lg-12 col-md-12 col-12 col-sm-12" *ngFor="let convenios of datosConveniosAsync | paginate: { itemsPerPage: 5, currentPage: page }">
+  <div class="d-flex flex-grow-1 min-width-zero">
+    <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+      <img src ="{{convenios.img}}" style="width: 7%" (click)="openLightbox(convenios.img)">
+      <a href="javascript:;" class="list-item-heading mb-1">{{convenios.name}}</a>
+      <p class="mb-1 text-muted text-small ">{{convenios.descripcion}}</p>
+      <div class="w-15 w-xs-100 text-right">
+        <span [class]="'badge badge-pill badge-'+convenios.statusColor">{{convenios.categoria}}</span>
+      </div>
     </div>
+  </div>
 </div>
+  <div class="card d-flex flex-row pl-3 pt-3 pb-2 mb-3 card col-xl-12 col-lg-12 col-md-12 col-12 col-sm-12 align-items-center h-100 y justify-content-center" >
+    <pagination-controls (pageChange)="page = $event" previousLabel="Anteriror" nextLabel="Siguiente"></pagination-controls>
+  </div>
+
+<ng-template #modalEncuesta let-modal data-backdrop="static" data-keyboard="false">
+  <div class="modal-header">
+      <h4 class="modal-title pull-left">Queremos tu opinión</h4>
+  </div>
+  <div  class="modal-body">
+      <diV class="row">
+          <p>¿Te pareció útil la información del módulo <strong>Convenios</strong>?</p>
+      </diV>
+      <br>
+      <diV  class="row col-lg-12">
+          <diV class="col-lg-12 col-md-12 col-sm-12">
+              <label>¿Tienes algún comentario o sugerencia que nos ayude a mejorar?</label>
+          </diV>
+          <diV class="col-lg-12 col-md-12 col-sm-12">
+              <textarea></textarea>
+          </diV>
+      </diV>
+  </div>
+  <div class="modal-footer align-items-center h-100 y justify-content-center">
+      <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')" style="
+      font-size: 20px;">
+          <i class="iconsminds-like"></i>
+      </button>
+      <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')" style="
+      font-size: 20px;">
+          <i class="iconsminds-unlike"></i>
+      </button>
+  </div>
+</ng-template>

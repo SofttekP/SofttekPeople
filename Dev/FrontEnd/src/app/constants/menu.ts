@@ -14,13 +14,13 @@ export interface IMenuItem {
 
 const data: IMenuItem[] = [
   {
-    icon: 'iconsminds-idea-2',
-    label: 'Tiempo para mi',
+    icon: 'iconsminds-sand-watch-2',
+    label: 'Tiempo para mí',
     to: `${adminRoot}/tiempo`,
     roles: [UserRole.Admin, UserRole.Editor]
   },
   {
-    icon: 'iconsminds-gamepad-2',
+    icon: 'iconsminds-handshake',
     label: 'Convenios',
     to: `${adminRoot}/convenios`,
      // roles: [UserRole.Editor],
@@ -34,16 +34,16 @@ const data: IMenuItem[] = [
   },
   {
     icon: 'iconsminds-heart',
-    label: 'Vida saludable',
+    label: 'Equilibrio de vida',
     to: `${adminRoot}/vidaSaludable`,
   },
   {
-    icon: 'iconsminds-coffee',
+    icon: 'iconsminds-friendster',
     label: 'Beneficios',
     to: `${adminRoot}/beneficios`,
   },
   {
-    icon: 'iconsminds-trophy',
+    icon: 'iconsminds-crown-2',
     label: 'Reconocimientos',
     to: `${adminRoot}/reconocimientos`,
   },
@@ -53,7 +53,7 @@ const data: IMenuItem[] = [
     to: `${adminRoot}/eventos`,
   },
   {
-    icon: 'iconsminds-administrator',
+    icon: 'iconsminds-gear-2',
     label: 'Administración',
     to: `${adminRoot}/admin`,
   },
